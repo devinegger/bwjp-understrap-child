@@ -27,7 +27,7 @@ $navbar_type       = get_theme_mod( 'understrap_navbar_type', 'collapse' );
 <div class="site" id="page">
 
 	<!-- ******************* The Navbar Area ******************* -->
-	<header id="wrapper-navbar" class="sticky-top">
+	<header id="wrapper-navbar">
 
 		<a class="skip-link sr-only sr-only-focusable" href="#content"><?php esc_html_e( 'Skip to content', 'understrap' ); ?></a>
 
@@ -35,4 +35,7 @@ $navbar_type       = get_theme_mod( 'understrap_navbar_type', 'collapse' );
 
 	</header><!-- #wrapper-navbar end -->
 	
-	<?php get_template_part('template-parts/page', 'title');    ?>
+	<?php if (! is_front_page()) : ?>
+		<!-- *** Page Title *** -->
+		<?php get_template_part('template-parts/page', 'title');    ?>
+	<?php endif; ?>

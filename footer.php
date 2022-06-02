@@ -16,12 +16,12 @@ $contact_bool = get_field('contact_form');
 
 
 <?php if ($contact_bool) : ?>
-<section class="" id="contact">
+<section class="footer-contact" id="contact">
 	<div class="container">
-		<div class="row d-flex justify-content-center ">
+		<div class="row d-flex justify-content-center py-5">
 			<div class="col-md-10">
-				<div class="contact-form p-4 border">
-					<h3 class="office-contact">Contact our Office</h3>
+				<div class="contact-form p-4">
+					<h3 class="office-contact text-info text-uppercase">Contact our Office</h3>
 					<?= do_shortcode( '[wpforms id="29" title="false"]' ); ?>
 				</div>
 			</div>
@@ -30,18 +30,17 @@ $contact_bool = get_field('contact_form');
 </section>
 <?php endif; ?>
 
-<section class="border-top border-bottom mt-3" id="stay-in-touch">
+<section class="bg-primary text-light" id="stay-in-touch">
 	<div class="container">
-		<div class="row justify-content-center py-5">
-			<div class="col-md-10">
-				<div class="form-wrapper d-flex justify-content-center align-items-center">
-					<span class="h4 me-5">Stay in touch</span>
-
+		<div class="row align-items-center py-5">
+			<div class="col-md-3 text-center text-md-start"><span class="h4">LET'S STAY IN TOUCH</span></div>
+			<div class="col-md-9 text-start">
+				<div class="form-wrapper">
 					<form class="form-inline d-flex">
 						<label class="sr-only" for="emailInput">Email</label>
-						<input type="text" class="form-control me-3" id="emailInput" placeholder="Email Address">
+						<input type="text" class="form-control me-3 text-uppercase" id="emailInput" placeholder="Email Address" size="60">
 
-						<button type="submit" class="btn btn-dark">SUBSCRIBE</button>
+						<button type="submit" class="btn">SUBSCRIBE</button>
 					</form>
 				</div>
 			</div>
@@ -49,33 +48,20 @@ $contact_bool = get_field('contact_form');
 	</div>
 </section>
 
-<footer class="site-footer" id="colophon">
-	<div class="container-fluid">
-		<div class="row px-5 py-4 align-items-center">
-			<div class="col-md-2">
-				<div class="site-info">
-
-					<span>Copyright <?= date('Y');?></span>
-
-				</div><!-- .site-info -->
-			</div><!--col end -->
-			<div class="col-md-10">
-				<nav>
-					<?php
-					wp_nav_menu(
-						array(
-							'theme_location'  => 'footer',
-							'container_class' => '',
-							'container_id'    => '',
-							'menu_class'      => 'nav d-flex flex-grow-1 justify-content-around',
-							'fallback_cb'     => '',
-							'menu_id'         => 'footer-menu',
-							'depth'           => 2,
-							'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
-						)
-					);
-					?>
-				</nav>
+<footer class="site-footer bg-primary text-light" id="colophon">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<p>540 Fairview Avenue N, Suite 208 St. Paul, MN 55104 | (800) 903-0111 x 1 | technicalassistance@bwjp.org</p>
+				<p>FOLLOW US ON  FACEBOOK  | INSTAGRAM  |  LINKEDIN   |  TWITTER</p>
+				<p>COPYRIGHT 2022 BATTERED WOMEN’S JUSTICE PROJECT.  ALL RIGHTS RESERVED</p>
+				<p>Privacy Policy</p>
+				<p>This website is supported by the U.S. Department of Health and Human Services, Grant #90EV0440-05-01. The viewpoints contained on this site are solely the responsibility of the author(s) and do not represent the official views or policies of the department and do not in any way constitute an endorsement by the Department of Health and Human Services.</p>
+			</div>
+		</div>
+		<div class="row align-items-center">
+			<div class="col-12">
+				<img src="/wp-content/uploads/2022/05/BWJP-decorative.png" alt="">
 			</div>
 		</div><!-- row end -->
 

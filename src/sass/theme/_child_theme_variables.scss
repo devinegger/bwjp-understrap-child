@@ -1,7 +1,31 @@
-// Use this file to overwrite the basic Bootstrap variables and add your own variables
-// To overwrite a Bootstrap variable you don´t have to touch the Bootstrap folder.
-// Just copy a variable from src/sass/assets/bootstrap5/_variables.scss, paste it here and edit the value.
+/* ** Colors ** */
+$purple: #6938E6; 
+$orange: #FF4D00;
+$teal: #19a5b4;  
+$blue: #000F9F;
+$gray: #C6D2DB;
+
+$primary: $purple;  
+$secondary: $orange;
+$info: $blue;
+
+/* ** Buttons ** */
+$font-family-base: termina, sans-serif; 
+
+/* ** Buttons ** */
+$btn-link-color: $blue;
+
+/* ** Forms ** */
+$input-bg: $primary;
+$input-color: #ffffff;
+$input-placeholder-color: #dcdada;
+$input-border-color: #ffffff;
+$input-border-width: 2px;
+$input-border-radius: .5rem;
 
 
-$purple: #5533ff; // Thats a sample how you could change a BootStrap variable.
-$primary: $purple;  // Once we've changed the value, we'll also make it the primary brand color.
+/* ** Navigation ** */
+$navbar-light-color: $orange;
+$navbar-light-hover-color: $blue;
+
+$enable-caret: false;

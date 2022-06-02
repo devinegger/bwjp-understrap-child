@@ -1,11 +1,140 @@
+.btn {
+    color: $blue;
+    background-color: $orange;
+    border: none;
+    border-radius: .5rem;
+    padding: .5rem 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+
+    &:hover {
+        color: $white;
+    }
+}
+
+
 #wrapper-navbar {
     background-color: #ffffff;
 }
+
+.navbar {
+    .navbar-nav {
+        .menu-item:hover {
+            .nav-link::before {
+                content: '';
+                height: .2rem;
+                width: 3rem;
+                background-color: #000f9f;
+                display: block;
+                position: absolute;
+                left: -2.2rem;
+                top: 1rem;
+            }
+        }
+        .nav-link {
+            text-transform: uppercase;
+            letter-spacing: .25rem;
+            padding: .25rem 1rem;
+            position: relative;
+        }
+    }
+
+    .navbar-brand {
+        img {
+            max-width: 12rem;
+        }
+    }
+}
+
+
+
 
 // make dropdown appear on hover
 .dropdown:hover {
     .dropdown-menu {
         display: block;
+        top: 0;
+        left: 9rem;
+    }
+}
+
+// homepage
+.home-main {
+    background-color: $primary;
+
+    .headline {
+        letter-spacing: 5px;
+        margin-bottom: -3rem;
+    }
+
+    .first-line {
+        font-weight: bold;
+        float: right;
+    }
+
+    .img-left img {
+        height: 75%;
+        position: absolute;
+        top: 10%;
+    }
+}
+
+// page templates
+#page-title {
+    .breadcrumbs {
+        text-transform: uppercase;
+
+        .crumb {
+            padding: 0 .5rem;
+        }
+        a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+    }
+}
+
+.featured-resources {
+    background-color: $gray;
+
+    .item-column {
+        min-height: 500px;
+    }
+
+    .column-overlay {
+        background-repeat: no-repeat;
+        background-color: #000f9fbd;
+        background-blend-mode: soft-light;
+        background-size: cover;
+
+        .over {
+            h4 {
+                text-transform: uppercase;
+            }
+        }
+
+        .under {
+            display: none;
+            text-align: center;
+            padding: 0 4rem;
+
+            p {
+                color: $blue;
+                font-size: 1.5rem;
+            }
+        }
+
+        &:hover {
+            background-color: #19a5b4;
+
+            .over {
+                display: none;
+            }
+
+            .under {
+                display: block;
+            }
+        }
     }
 }
 
@@ -28,4 +157,32 @@
 
 .wpforms-submit-container {
     text-align: right;
+}
+
+
+// footer
+.footer-contact {
+    background-color: $teal;
+
+    .contact-form {
+        color: $info;
+        
+        input, textarea {
+            padding: 1rem 2rem !important;
+            border-radius: .5rem !important;
+            font-size: .8rem;
+            // font-family: 'Source Sans Pro', sans-serif !important;
+        }
+
+        ::placeholder {
+            color: $info;
+            text-transform: uppercase;
+            font-size: .8rem;
+            // font-family: 'Source Sans Pro', sans-serif !important;
+        }
+
+        .wpforms-submit {
+            @extend .btn;
+        }
+    }
 }

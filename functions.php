@@ -89,8 +89,12 @@ function understrap_child_customize_controls_js() {
 add_action( 'customize_controls_enqueue_scripts', 'understrap_child_customize_controls_js' );
 
 
-function hcd_footer_menu() {
-	register_nav_menu('footer', __("Footer Menu"));
+function hcd_custom_menus() {
+	register_nav_menus( array(
+	'secondary' => __("Secondary Menu"),
+	'footer' => __("Footer Menu"),
+	) );
 }
 
-add_action('init', 'hcd_footer_menu');
+add_action('init', 'hcd_custom_menus');
+

@@ -1,4 +1,9 @@
 @charset "UTF-8";
+/* ** Colors ** */
+/* ** Buttons ** */
+/* ** Buttons ** */
+/* ** Forms ** */
+/* ** Navigation ** */
 *,
 *::before,
 *::after {
@@ -170,11 +175,11 @@ sup {
 }
 
 a {
-  color: #5533ff;
+  color: #6938E6;
   text-decoration: underline;
 }
 a:hover {
-  color: #4429cc;
+  color: #542db8;
 }
 
 a:not([href]):not([class]), a:not([href]):not([class]):hover {
@@ -423,15 +428,15 @@ progress {
 }
 
 :root {
-  --bs-blue: #0d6efd;
+  --bs-blue: #000F9F;
   --bs-indigo: #6610f2;
-  --bs-purple: #5533ff;
+  --bs-purple: #6938E6;
   --bs-pink: #d63384;
   --bs-red: #dc3545;
-  --bs-orange: #fd7e14;
+  --bs-orange: #FF4D00;
   --bs-yellow: #ffc107;
   --bs-green: #198754;
-  --bs-teal: #20c997;
+  --bs-teal: #19a5b4;
   --bs-cyan: #0dcaf0;
   --bs-white: #fff;
   --bs-gray: #6c757d;
@@ -445,18 +450,18 @@ progress {
   --bs-gray-700: #495057;
   --bs-gray-800: #343a40;
   --bs-gray-900: #212529;
-  --bs-primary: #5533ff;
-  --bs-secondary: #6c757d;
+  --bs-primary: #6938E6;
+  --bs-secondary: #FF4D00;
   --bs-success: #198754;
-  --bs-info: #0dcaf0;
+  --bs-info: #000F9F;
   --bs-warning: #ffc107;
   --bs-danger: #dc3545;
   --bs-light: #f8f9fa;
   --bs-dark: #212529;
-  --bs-primary-rgb: 85, 51, 255;
-  --bs-secondary-rgb: 108, 117, 125;
+  --bs-primary-rgb: 105, 56, 230;
+  --bs-secondary-rgb: 255, 77, 0;
   --bs-success-rgb: 25, 135, 84;
-  --bs-info-rgb: 13, 202, 240;
+  --bs-info-rgb: 0, 15, 159;
   --bs-warning-rgb: 255, 193, 7;
   --bs-danger-rgb: 220, 53, 69;
   --bs-light-rgb: 248, 249, 250;
@@ -468,7 +473,7 @@ progress {
   --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
-  --bs-body-font-family: var(--bs-font-sans-serif);
+  --bs-body-font-family: termina, sans-serif;
   --bs-body-font-size: 1rem;
   --bs-body-font-weight: 400;
   --bs-body-line-height: 1.5;
@@ -542,27 +547,27 @@ progress {
 }
 
 .table-primary {
-  --bs-table-bg: #ddd6ff;
-  --bs-table-striped-bg: #d2cbf2;
+  --bs-table-bg: #e1d7fa;
+  --bs-table-striped-bg: #d6ccee;
   --bs-table-striped-color: #000;
-  --bs-table-active-bg: #c7c1e6;
+  --bs-table-active-bg: #cbc2e1;
   --bs-table-active-color: #000;
-  --bs-table-hover-bg: #ccc6ec;
+  --bs-table-hover-bg: #d0c7e7;
   --bs-table-hover-color: #000;
   color: #000;
-  border-color: #c7c1e6;
+  border-color: #cbc2e1;
 }
 
 .table-secondary {
-  --bs-table-bg: #e2e3e5;
-  --bs-table-striped-bg: #d7d8da;
+  --bs-table-bg: #ffdbcc;
+  --bs-table-striped-bg: #f2d0c2;
   --bs-table-striped-color: #000;
-  --bs-table-active-bg: #cbccce;
+  --bs-table-active-bg: #e6c5b8;
   --bs-table-active-color: #000;
-  --bs-table-hover-bg: #d1d2d4;
+  --bs-table-hover-bg: #eccbbd;
   --bs-table-hover-color: #000;
   color: #000;
-  border-color: #cbccce;
+  border-color: #e6c5b8;
 }
 
 .table-success {
@@ -578,15 +583,15 @@ progress {
 }
 
 .table-info {
-  --bs-table-bg: #cff4fc;
-  --bs-table-striped-bg: #c5e8ef;
+  --bs-table-bg: #cccfec;
+  --bs-table-striped-bg: #c2c5e0;
   --bs-table-striped-color: #000;
-  --bs-table-active-bg: #badce3;
+  --bs-table-active-bg: #b8bad4;
   --bs-table-active-color: #000;
-  --bs-table-hover-bg: #bfe2e9;
+  --bs-table-hover-bg: #bdbfda;
   --bs-table-hover-color: #000;
   color: #000;
-  border-color: #badce3;
+  border-color: #b8bad4;
 }
 
 .table-warning {
@@ -813,12 +818,12 @@ progress {
 
 .has-blue-color,
 .has-blue-color:visited {
-  color: #0d6efd;
+  color: #000F9F;
 }
 
 .has-blue-background-color {
-  background-color: #0d6efd;
-  border-color: #0d6efd;
+  background-color: #000F9F;
+  border-color: #000F9F;
 }
 
 .has-indigo-color,
@@ -833,12 +838,12 @@ progress {
 
 .has-purple-color,
 .has-purple-color:visited {
-  color: #5533ff;
+  color: #6938E6;
 }
 
 .has-purple-background-color {
-  background-color: #5533ff;
-  border-color: #5533ff;
+  background-color: #6938E6;
+  border-color: #6938E6;
 }
 
 .has-pink-color,
@@ -863,12 +868,12 @@ progress {
 
 .has-orange-color,
 .has-orange-color:visited {
-  color: #fd7e14;
+  color: #FF4D00;
 }
 
 .has-orange-background-color {
-  background-color: #fd7e14;
-  border-color: #fd7e14;
+  background-color: #FF4D00;
+  border-color: #FF4D00;
 }
 
 .has-yellow-color,
@@ -893,12 +898,12 @@ progress {
 
 .has-teal-color,
 .has-teal-color:visited {
-  color: #20c997;
+  color: #19a5b4;
 }
 
 .has-teal-background-color {
-  background-color: #20c997;
-  border-color: #20c997;
+  background-color: #19a5b4;
+  border-color: #19a5b4;
 }
 
 .has-cyan-color,
@@ -943,22 +948,22 @@ progress {
 
 .has-primary-color,
 .has-primary-color:visited {
-  color: #5533ff;
+  color: #6938E6;
 }
 
 .has-primary-background-color {
-  background-color: #5533ff;
-  border-color: #5533ff;
+  background-color: #6938E6;
+  border-color: #6938E6;
 }
 
 .has-secondary-color,
 .has-secondary-color:visited {
-  color: #6c757d;
+  color: #FF4D00;
 }
 
 .has-secondary-background-color {
-  background-color: #6c757d;
-  border-color: #6c757d;
+  background-color: #FF4D00;
+  border-color: #FF4D00;
 }
 
 .has-success-color,
@@ -973,12 +978,12 @@ progress {
 
 .has-info-color,
 .has-info-color:visited {
-  color: #0dcaf0;
+  color: #000F9F;
 }
 
 .has-info-background-color {
-  background-color: #0dcaf0;
-  border-color: #0dcaf0;
+  background-color: #000F9F;
+  border-color: #000F9F;
 }
 
 .has-warning-color,
