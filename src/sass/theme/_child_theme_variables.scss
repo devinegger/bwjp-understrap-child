@@ -5,6 +5,8 @@ $teal: #19a5b4;
 $blue: #000F9F;
 $gray: #C6D2DB;
 
+$light-blue: #000eff;
+
 $primary: $purple;  
 $secondary: $orange;
 $info: $blue;
@@ -26,6 +28,18 @@ $input-border-radius: .5rem;
 
 /* ** Navigation ** */
 $navbar-light-color: $orange;
-$navbar-light-hover-color: $blue;
+$navbar-light-hover-color: $purple;
+$navbar-light-active-color: $blue;
+
+
+$dropdown-padding-y: 0;
+$dropdown-font-size: .8rem;
+$dropdown-color: $purple;
+$dropdown-border-radius: 0;
+$dropdown-link-color: $purple;
+$dropdown-link-hover-color: #ffffff;
+$dropdown-link-hover-bg: $purple;
+$dropdown-link-active-color: #ffffff;
+$dropdown-link-active-bg: $purple;
 
 $enable-caret: false;

@@ -12,6 +12,11 @@
     }
 }
 
+input:focus::placeholder,
+textarea:focus::placeholder {
+    color: transparent !important;
+}
+
 
 #wrapper-navbar {
     background-color: #ffffff;
@@ -19,18 +24,37 @@
 
 .navbar {
     .navbar-nav {
-        .menu-item:hover {
+        .menu-item:hover,
+        .menu-item.active {
             .nav-link::before {
                 content: '';
                 height: .2rem;
                 width: 3rem;
-                background-color: #000f9f;
                 display: block;
                 position: absolute;
                 left: -2.2rem;
                 top: 1rem;
             }
         }
+
+        .menu-item:hover {
+            .nav-link {
+                color: $purple;
+            }
+            .nav-link::before {
+                background-color: $purple;
+            }
+        }
+
+        .menu-item.active {
+            .nav-link {
+                color: $blue;
+            }
+            .nav-link::before {
+                background-color: $blue;
+            }
+        }
+
         .nav-link {
             text-transform: uppercase;
             letter-spacing: .25rem;
@@ -54,7 +78,21 @@
     .dropdown-menu {
         display: block;
         top: 0;
-        left: 9rem;
+        left: 12rem;
+    }
+}
+
+.dropdown-menu {
+    a {
+        text-transform: uppercase;
+    }
+
+    .menu-item.active {
+        background-color: $purple;
+
+        a {
+            color: $white;
+        }
     }
 }
 
@@ -138,6 +176,12 @@
     }
 }
 
+.national-gun-violence {
+    h3 {
+        color: $light-blue;
+    }
+}
+
 
 #left-sidebar {
     .sidebar-search {
@@ -181,8 +225,21 @@
             // font-family: 'Source Sans Pro', sans-serif !important;
         }
 
-        .wpforms-submit {
+        #wpforms-submit-29 {
             @extend .btn;
+            float: left;
         }
+    }
+}
+
+footer {
+    text-transform: uppercase;
+
+    p {
+        margin-bottom: 1.5rem;
+    }
+
+    a {
+        color: $white;
     }
 }

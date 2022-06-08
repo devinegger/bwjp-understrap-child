@@ -53,9 +53,9 @@ $contact_bool = get_field('contact_form');
 		<div class="row">
 			<div class="col-12">
 				<p>540 Fairview Avenue N, Suite 208 St. Paul, MN 55104 | (800) 903-0111 x 1 | technicalassistance@bwjp.org</p>
-				<p>FOLLOW US ON  FACEBOOK  | INSTAGRAM  |  LINKEDIN   |  TWITTER</p>
-				<p>COPYRIGHT 2022 BATTERED WOMEN’S JUSTICE PROJECT.  ALL RIGHTS RESERVED</p>
-				<p>Privacy Policy</p>
+				<p class="mb-5">FOLLOW US ON <a href="">FACEBOOK</a> | <a href="">INSTAGRAM</a> | <a href="">LINKEDIN</a> | <a href="">TWITTER</a></p>
+				<p class="pt-5">COPYRIGHT 2022 BATTERED WOMEN'S JUSTICE PROJECT.  ALL RIGHTS RESERVED</p>
+				<p><a href="#">Privacy Policy</a></p>
 				<p>This website is supported by the U.S. Department of Health and Human Services, Grant #90EV0440-05-01. The viewpoints contained on this site are solely the responsibility of the author(s) and do not represent the official views or policies of the department and do not in any way constitute an endorsement by the Department of Health and Human Services.</p>
 			</div>
 		</div>

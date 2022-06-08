@@ -45,67 +45,18 @@ get_header();
 					</div>
 				</div>
 			</section>
-			<section class="featured-resources">
+			<section class="national-gun-violence bg-info">
 				<div class="row py-5">
 					<div class="col-12">
-						<h3 class="text-info fw-bold display-4 text-center">FEATURED RESOURCES</h3>
-						<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-							<div class="carousel-inner">
-								<div class="carousel-item active">
-									<div class="row py-3">
-										<div class="col-sm-3 item-column">
-											<div class="column-overlay d-flex h-100 align-items-center justify-content-center" style="background-image: url('/wp-content/uploads/2022/06/featured-resource-1.jpg');">
-												<div class="over">
-													<h4 class="text-white">Resource Title</h4>
-												</div>
-												<div class="under">
-													<p>Excepteur sint occaecat cupidatat non proident.</p>
-													<a href="#" class="btn">Learn More</a>
-												</div>
-											</div>
-										</div>
-										<div class="col-sm-3 item-column">
-											<div class="column-overlay d-flex h-100 align-items-center justify-content-center" style="background-image: url('/wp-content/uploads/2022/06/featured-resource-2.jpg');">
-												<div class="over">
-													<h4 class="text-white">Resource Title</h4>
-												</div>
-												<div class="under">
-													<p>Excepteur sint occaecat cupidatat non proident.</p>
-													<a href="#" class="btn">Learn More</a>
-												</div>
-											</div>
-										</div>
-										<div class="col-sm-3 item-column">
-											<div class="column-overlay d-flex h-100 align-items-center justify-content-center" style="background-image: url('/wp-content/uploads/2022/06/featured-resource-3.jpg');">
-												<div class="over">
-													<h4 class="text-white">Resource Title</h4>
-												</div>
-												<div class="under">
-													<p>Excepteur sint occaecat cupidatat non proident.</p>
-													<a href="#" class="btn">Learn More</a>
-												</div>
-											</div>
-										</div>
-										<div class="col-sm-3 item-column">
-											<div class="column-overlay d-flex h-100 align-items-center justify-content-center" style="background-image: url('/wp-content/uploads/2022/06/featured-resource-4.jpg');">
-												<div class="over">
-													<h4 class="text-white">Resource Title</h4>
-												</div>
-												<div class="under">
-													<p>Excepteur sint occaecat cupidatat non proident.</p>
-													<a href="#" class="btn">Learn More</a>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
+						<h3 class="fw-bold display-4 text-center">NATIONAL GUN VIOLENCE</h3>
+						<div class="d-flex justify-content-center">
+							<img src="/wp-content/uploads/2022/06/Screen-Shot-2022-06-06-at-6.47.00-PM.png" alt="">
 						</div>
+							
 					</div>
 				</div>
 			</section>
-
-
+			
 			<?php get_template_part('template-parts/acf','main'); ?>
 		</div>
 	</main><!-- #main -->

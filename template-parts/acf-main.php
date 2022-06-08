@@ -17,19 +17,14 @@
             get_template_part('template-parts/acf','left-right-image-content');
         endif;
 
-        // Three Column Custom Template
-        if (get_row_layout() == 'three_column_custom') :
-            get_template_part('template-parts/acf','three-column-custom');
+        // WYSIWYG Template
+        if (get_row_layout() == 'wysiwyg') :
+            get_template_part('template-parts/acf','wysiwyg');
         endif;
 
-        // Three Column Post Template
-        if (get_row_layout() == 'three_column_post') :
-            get_template_part('template-parts/acf','three-column-post');
-        endif;
-
-        // Masonry Post Template
-        if (get_row_layout() == 'post_masonry') :
-            get_template_part('template-parts/acf','masonry-posts');
+        // Featured Posts Template
+        if (get_row_layout() == 'featured_posts') :
+            get_template_part('template-parts/acf','featured-posts');
         endif;
 
     endwhile;

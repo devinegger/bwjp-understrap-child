@@ -10,6 +10,14 @@ $bg_color = get_sub_field('background_color');
 // text color
 $text_color = get_sub_field('text_color');
 
+// set class based on text color
+$content_class = "text";
+if ($text_color === "Blue") {
+    $content_class .= "-info";
+} elseif ($text_color === "White") {
+    $content_class .= "-white";
+}
+
 // side image is on
 $image_side = get_sub_field('image_side');
 
@@ -49,8 +57,8 @@ $image_side === 'left' ? $image_class = '' : $image_class = 'order-md-2';
         <div class="col-md-6 p-3 <?= $image_class ?>">
             <?= $image ?>
         </div>
-        <div class="col-md-6 p-3">
-            <h3 style="color: <?= $text_color ?> ;"><?= $headline ?></h3>
+        <div class="col-md-6 p-3 <?= $content_class ?>">
+            <h3 class="fw-bold text-uppercase mb-5" style="color: <?= $text_color ?> ;"><?= $headline ?></h3>
             <p style="color: <?= $text_color ?> ;"><?= $content ?></p>
             <?php if($button_arr) : ?>
                 <a href="<?= $button_url ?>" class="btn btn-dark" target="<?= $button_target ?>"><?= $button_title ?></a>
