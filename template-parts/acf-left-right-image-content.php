@@ -1,7 +1,7 @@
 <?php 
 
 /** 
- * Template Part for displaying ACF - Headline with Image
+ * Template Part for displaying ACF - Left Right Image Content
  */
 
 // background color
@@ -53,16 +53,18 @@ $image_side === 'left' ? $image_class = '' : $image_class = 'order-md-2';
 
 
 <section class="left-right-image-content" style="background-color: <?= $bg_color; ?> ;">
-    <div class="row d-flex align-items-center p-5">
-        <div class="col-md-6 p-3 <?= $image_class ?>">
-            <?= $image ?>
-        </div>
-        <div class="col-md-6 p-3 <?= $content_class ?>">
-            <h3 class="fw-bold text-uppercase mb-5" style="color: <?= $text_color ?> ;"><?= $headline ?></h3>
-            <p style="color: <?= $text_color ?> ;"><?= $content ?></p>
-            <?php if($button_arr) : ?>
-                <a href="<?= $button_url ?>" class="btn btn-dark" target="<?= $button_target ?>"><?= $button_title ?></a>
-            <?php endif; ?>
+    <div class="container">
+        <div class="row d-flex align-items-center py-5">
+            <div class="col-md-6 p-3 <?= $image_class ?>">
+                <?= $image ?>
+            </div>
+            <div class="col-md-6 p-3 <?= $content_class ?>">
+                <h3 class="fw-bold text-uppercase mb-5" style="color: <?= $text_color ?> ;"><?= $headline ?></h3>
+                <p style="color: <?= $text_color ?> ;"><?= $content ?></p>
+                <?php if($button_arr) : ?>
+                    <a href="<?= $button_url ?>" class="btn btn-dark" target="<?= $button_target ?>"><?= $button_title ?></a>
+                <?php endif; ?>
+            </div>
         </div>
     </div>
 </section>

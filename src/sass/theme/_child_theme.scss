@@ -1,3 +1,7 @@
+picture.img-fluid img {
+    @extend .img-fluid;
+}
+
 .btn {
     color: $blue;
     background-color: $orange;
@@ -179,6 +183,73 @@ textarea:focus::placeholder {
 .national-gun-violence {
     h3 {
         color: $light-blue;
+    }
+}
+
+.results-circles {
+    background-color: $purple;
+
+    .circle-container {
+        background-color: #FF4D00;
+        cursor: pointer;
+        border-radius: 50%;
+
+        &::after {
+            content: "";
+            display: block;
+            padding-bottom: 100%;
+        }
+
+        &.bg-white {
+            background-color: #FFFFFF;
+        }
+
+        .circle-outer {
+            
+            height: 100%;
+            width: 100%;
+            
+        }
+
+        .circle-inner {
+            position: absolute;
+
+            .front, .back {
+                position: absolute;
+                top: 10rem;
+                height: 100%;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+            }
+            .front {    
+                color: $blue;
+            }
+            .back {
+                color: $purple;
+            }
+
+        }
+    }
+}
+
+.staff-cards {
+    .member-image img {
+        width: 100% !important;
+    }
+
+    .btn-close {
+        opacity: 1;
+        border-radius: 50%;
+    }
+}
+
+.partnership-cards {
+    .image-wrapper {
+        height: 15rem;
     }
 }
 

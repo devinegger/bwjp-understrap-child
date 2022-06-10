@@ -27,5 +27,20 @@
             get_template_part('template-parts/acf','featured-posts');
         endif;
 
+        // Results Circles Template
+        if (get_row_layout() == 'results_circles') :
+            get_template_part('template-parts/acf','results-circles');
+        endif;
+        
+        // Staff Cards Template
+        if (get_row_layout() == 'staff_cards') :
+            get_template_part('template-parts/acf','staff-cards');
+        endif;
+
+        // Partnership Cards Template
+        if (get_row_layout() == 'partnership_cards') :
+            get_template_part('template-parts/acf','partnership-cards');
+        endif;
+
     endwhile;
  endif;

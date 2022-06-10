@@ -598,7 +598,7 @@ progress {
   content: "— ";
 }
 
-.img-fluid {
+.img-fluid, picture.img-fluid img {
   max-width: 100%;
   height: auto;
 }
@@ -15711,6 +15711,58 @@ textarea:focus::placeholder {
 
 .national-gun-violence h3, .national-gun-violence .h3 {
   color: #000eff;
+}
+
+.results-circles {
+  background-color: #6938E6;
+}
+.results-circles .circle-container {
+  background-color: #FF4D00;
+  cursor: pointer;
+  border-radius: 50%;
+}
+.results-circles .circle-container::after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+.results-circles .circle-container.bg-white {
+  background-color: #FFFFFF;
+}
+.results-circles .circle-container .circle-outer {
+  height: 100%;
+  width: 100%;
+}
+.results-circles .circle-container .circle-inner {
+  position: absolute;
+}
+.results-circles .circle-container .circle-inner .front, .results-circles .circle-container .circle-inner .back {
+  position: absolute;
+  top: 10rem;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.results-circles .circle-container .circle-inner .front {
+  color: #000F9F;
+}
+.results-circles .circle-container .circle-inner .back {
+  color: #6938E6;
+}
+
+.staff-cards .member-image img {
+  width: 100% !important;
+}
+.staff-cards .btn-close {
+  opacity: 1;
+  border-radius: 50%;
+}
+
+.partnership-cards .image-wrapper {
+  height: 15rem;
 }
 
 #left-sidebar .sidebar-search {

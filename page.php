@@ -38,11 +38,13 @@ $page_bg_color = get_field('page_background_color');
 				</div>
 			</div>
 		</div>
-		<div class="row justify-content-center">
-			<div class="col-12 p-0">
+		<div class="container-fluid p-0">
+			<div class="row justify-content-center">
+				<div class="col-12 p-0">
 
-				<?php get_template_part('template-parts/acf','main'); ?>
+					<?php get_template_part('template-parts/acf','main'); ?>
 
+				</div>
 			</div>
 		</div>
 	</div><!-- #content -->

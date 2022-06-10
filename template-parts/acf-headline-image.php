@@ -17,7 +17,7 @@ $image = wp_get_attachment_image( $image_ID, 'full', array('src' => $image_url, 
 
 
 <section class="headline-image">
-    <div class="row py-3">
+    <div class="row py-5">
         <div class="col">
             <h3><?= $headline ?></h3>
             <?= $image ?>

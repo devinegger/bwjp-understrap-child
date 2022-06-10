@@ -1,7 +1,7 @@
 <?php 
 
 /** 
- * Template Part for displaying ACF - Headline with Image
+ * Template Part for displaying ACF - WYSIWYG
  */
 
 // background color
@@ -25,10 +25,12 @@ $headline = get_sub_field('headline');
 
 
 <section class="wysiwyg" style="background-color: <?= $bg_color; ?> ;">
-    <div class="row d-flex align-items-center p-5">
-        <div class="col-12 p-3 <?= $content_class ?>">
-            <h3 class="fw-bold text-uppercase"><?= $headline; ?></h3>
-            <p style="color: <?= $text_color ?> ;"><?= $content ?></p>
+    <div class="container">
+        <div class="row d-flex align-items-center py-5">
+            <div class="col-12 <?= $content_class ?>">
+                <h3 class="fw-bold text-uppercase"><?= $headline; ?></h3>
+                <p style="color: <?= $text_color ?> ;"><?= $content ?></p>
+            </div>
         </div>
     </div>
 </section>
