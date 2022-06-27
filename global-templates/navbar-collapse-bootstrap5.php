@@ -28,7 +28,7 @@ defined( 'ABSPATH' ) || exit;
 				wp_nav_menu(
 					array(
 						'theme_location'  => 'primary',
-						'container_class' => 'collapse navbar-collapse',
+						'container_class' => '',
 						'container_id'    => 'navbarNavDropdownLeft',
 						'menu_class'      => 'navbar-nav d-flex flex-column justify-content-around',
 						'fallback_cb'     => '',

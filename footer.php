@@ -32,13 +32,13 @@ $contact_bool = get_field('contact_form');
 
 <section class="bg-primary text-light" id="stay-in-touch">
 	<div class="container">
-		<div class="row align-items-center py-5">
-			<div class="col-md-3 text-center text-md-start"><span class="h4">LET'S STAY IN TOUCH</span></div>
-			<div class="col-md-9 text-start">
+		<div class="d-flex justify-content-lg-between py-5 flex-column flex-lg-row">
+			<div class="text-start mb-2"><span class="h4">LET'S STAY IN TOUCH</span></div>
+			<div class="text-start">
 				<div class="form-wrapper">
 					<form class="form-inline d-flex">
 						<label class="sr-only" for="emailInput">Email</label>
-						<input type="text" class="form-control me-3 text-uppercase" id="emailInput" placeholder="Email Address" size="60">
+						<input type="text" class="form-control me-3 text-uppercase" id="emailInput" placeholder="Email Address" size="50">
 
 						<button type="submit" class="btn">SUBSCRIBE</button>
 					</form>
@@ -52,11 +52,9 @@ $contact_bool = get_field('contact_form');
 	<div class="container">
 		<div class="row">
 			<div class="col-12">
-				<p>540 Fairview Avenue N, Suite 208 St. Paul, MN 55104 | (800) 903-0111 x 1 | technicalassistance@bwjp.org</p>
-				<p class="mb-5">FOLLOW US ON <a href="">FACEBOOK</a> | <a href="">INSTAGRAM</a> | <a href="">LINKEDIN</a> | <a href="">TWITTER</a></p>
-				<p class="pt-5">COPYRIGHT 2022 BATTERED WOMEN'S JUSTICE PROJECT.  ALL RIGHTS RESERVED</p>
-				<p><a href="#">Privacy Policy</a></p>
-				<p>This website is supported by the U.S. Department of Health and Human Services, Grant #90EV0440-05-01. The viewpoints contained on this site are solely the responsibility of the author(s) and do not represent the official views or policies of the department and do not in any way constitute an endorsement by the Department of Health and Human Services.</p>
+
+				<?php the_field('footer_text', 'options'); ?>
+
 			</div>
 		</div>
 		<div class="row align-items-center">

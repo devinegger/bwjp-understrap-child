@@ -31,6 +31,10 @@ $navbar-light-color: $orange;
 $navbar-light-hover-color: $purple;
 $navbar-light-active-color: $blue;
 
+$navbar-light-toggler-icon-bg:  url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='#ffffff' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>") !default;
+$navbar-toggler-padding-y:          .5rem !default;
+$navbar-toggler-padding-x:          .5rem !default;
+$navbar-toggler-border-radius: 50%;
 
 $dropdown-padding-y: 0;
 $dropdown-font-size: .8rem;

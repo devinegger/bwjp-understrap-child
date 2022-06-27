@@ -72,23 +72,66 @@ textarea:focus::placeholder {
             max-width: 12rem;
         }
     }
+
+    
+
+    .side-menu {
+        
+        /*  recommending modal for now 
+        position: fixed;
+        top: 27%;
+        z-index: 950;
+        width: 100%;
+        background: #fff;
+        height: 137px;
+        */
+
+        .navbar-toggler {
+            position: fixed;
+            top: 28%;
+            left: 2%;
+            color: #fff !important;
+            background-color: $orange;
+            z-index: 900;
+
+            @include media-breakpoint-down(md) {
+                display: block !important;
+            }
+        }
+
+        .quick-exit {
+            position: fixed;
+            z-index: 900;
+            top: 35%;
+            left: 2%;
+            border-radius: 50%;
+            padding: .5rem;
+        }
+    }
 }
 
 
 
-
-// make dropdown appear on hover
-.dropdown:hover {
-    .dropdown-menu {
-        display: block;
-        top: 0;
-        left: 12rem;
+@include media-breakpoint-up(md) {
+    // make dropdown appear on hover
+    .desktop-menu {
+         .dropdown:hover {
+            .dropdown-menu {
+                display: block;
+                top: 0;
+                left: 12rem;
+            }
+        }
     }
 }
 
 .dropdown-menu {
     a {
         text-transform: uppercase;
+
+        @include media-breakpoint-down(md) {
+            white-space: normal;
+        }
     }
 
     .menu-item.active {

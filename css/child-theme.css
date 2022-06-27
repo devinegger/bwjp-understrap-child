@@ -5089,12 +5089,12 @@ textarea.form-control-lg {
 }
 
 .navbar-toggler {
-  padding: 0.25rem 0.75rem;
+  padding: 0.5rem 0.5rem;
   font-size: 1.25rem;
   line-height: 1;
   background-color: transparent;
   border: 1px solid transparent;
-  border-radius: 0.25rem;
+  border-radius: 50%;
   transition: box-shadow 0.15s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
@@ -5467,7 +5467,7 @@ textarea.form-control-lg {
   border-color: rgba(0, 0, 0, 0.1);
 }
 .navbar-light .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23FF4D00' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23ffffff' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 .navbar-light .navbar-text {
   color: #FF4D00;
@@ -15630,15 +15630,52 @@ textarea:focus::placeholder {
 .navbar .navbar-brand img {
   max-width: 12rem;
 }
-
-.dropdown:hover .dropdown-menu {
-  display: block;
-  top: 0;
-  left: 12rem;
+.navbar .side-menu {
+  /*  recommending modal for now 
+  position: fixed;
+  top: 27%;
+  z-index: 950;
+  width: 100%;
+  background: #fff;
+  height: 137px;
+  */
+}
+.navbar .side-menu .navbar-toggler {
+  position: fixed;
+  top: 28%;
+  left: 2%;
+  color: #fff !important;
+  background-color: #FF4D00;
+  z-index: 900;
+}
+@media (max-width: 767.98px) {
+  .navbar .side-menu .navbar-toggler {
+    display: block !important;
+  }
+}
+.navbar .side-menu .quick-exit {
+  position: fixed;
+  z-index: 900;
+  top: 35%;
+  left: 2%;
+  border-radius: 50%;
+  padding: 0.5rem;
 }
 
+@media (min-width: 768px) {
+  .desktop-menu .dropdown:hover .dropdown-menu {
+    display: block;
+    top: 0;
+    left: 12rem;
+  }
+}
 .dropdown-menu a {
   text-transform: uppercase;
+}
+@media (max-width: 767.98px) {
+  .dropdown-menu a {
+    white-space: normal;
+  }
 }
 .dropdown-menu .menu-item.active {
   background-color: #6938E6;

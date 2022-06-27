@@ -23,7 +23,7 @@ get_header();
 
 			<section class="home-main">
 				<div class="row justify-content-center px-5 pt-5">
-					<div class="col-10" style="z-index: 999;">
+					<div class="col-10" style="z-index: 800;">
 						<h2 class="text-uppercase text-light text-left display-3 headline"><span class="first-line">Changing Systems</span>
 						<br/>Transforming Lives</h2>
 					</div>
