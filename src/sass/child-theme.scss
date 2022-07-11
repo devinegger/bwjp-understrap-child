@@ -12,3 +12,9 @@
 @import "assets/understrap/theme/colors";           // <-------- This creates the necessary bootstrap color classes.
 @import "assets/understrap/theme/blocks";           // <-------- This adds Bootstrap styles to blocks.
 @import "assets/understrap/theme/contact-form7";    // <-------- Contact Form 7 - Bootstrap 4 support
+
+// Adding Adobe Termina font
+@import url("https://use.typekit.net/eod1bmn.css");
+
+// Adding Google Outfit and Source Sans Pro fonts
+// @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;400;700&family=Source+Sans+Pro:wght@300;400;600&display=swap');
