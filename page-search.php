@@ -32,17 +32,7 @@ if($page_bg_color['label'] === "White") {
 			<div class="col-12">
 				<div class="container">
 				
-					<?php
-						while ( have_posts() ) {
-							the_post();
-							get_template_part( 'loop-templates/content', 'page' );
-
-							// If comments are open or we have at least one comment, load up the comment template.
-							if ( comments_open() || get_comments_number() ) {
-								comments_template();
-							}
-						}
-					?>
+					<?php get_search_form(); ?>
 				</div>
 			</div>
 		</div>

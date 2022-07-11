@@ -21,13 +21,6 @@ if ( isset( $args['aria_label'] ) && ! empty( $args['aria_label'] ) ) {
 	<label class="screen-reader-text" for="<?php echo $uid; ?>"><?php echo esc_html_x( 'Search for:', 'label', 'understrap' ); ?></label>
 	<div class="input-group">
 		<input type="search" class="field search-field form-control" id="<?php echo $uid; ?>" name="s" value="<?php the_search_query(); ?>" placeholder="<?php echo esc_attr_x( 'Search &hellip;', 'placeholder', 'understrap' ); ?>">
-		<?php if ( 'bootstrap5' === $bootstrap_version ) : ?>
-			<input type="submit" class="submit search-submit btn btn-dark" name="submit" value="<?php echo esc_attr_x( 'Search', 'submit button', 'understrap' ); ?>">
-		<?php else : ?>
-			<span class="input-group-append">
-				<input type="submit" class="submit search-submit btn btn-primary" name="submit" value="<?php echo esc_attr_x( 'Search', 'submit button', 'understrap' ); ?>">
-			</span>
-		<?php endif; ?>
 	</div>
 </form>
 <?php

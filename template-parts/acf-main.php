@@ -17,6 +17,11 @@
             get_template_part('template-parts/acf','left-right-image-content');
         endif;
 
+        // Left Right Image Content Template
+        if (get_row_layout() == 'content_donation_form') :
+            get_template_part('template-parts/acf','content-donation-form');
+        endif;
+
         // WYSIWYG Template
         if (get_row_layout() == 'wysiwyg') :
             get_template_part('template-parts/acf','wysiwyg');

@@ -1,5 +1,6 @@
 picture.img-fluid img {
     @extend .img-fluid;
+    width: 100% !important;
 }
 
 .btn {
@@ -313,9 +314,84 @@ textarea:focus::placeholder {
     }
 }
 
+.resource-sections {
+
+    .sections-list {
+        list-style-type: none;
+
+        li {
+            padding: .5rem 0;
+        }
+    }
+}
+
+.pagination {
+    justify-content: end;
+
+    .page-item:not(.active) {
+        a {
+            color: $orange;    
+        }
+    }
+}
+
+.contact-bwjp {
+    .contact-sidebar {
+        img {
+            width: 100% !important;
+        }
+    }
+    
+    .wpforms-confirmation-container-full {
+        background: #19a5b4 !important;
+        border: none !important;
+        color: $blue !important;
+    }
+}
+
+
 .wpforms-submit-container {
     text-align: right;
 }
+
+
+// OUR WORK
+#our-work-sidebar {
+    margin-top: -2rem;
+}
+
+.content-bottom {
+    padding: 3rem 0 2rem 0;
+}
+
+.content-tools {
+    padding: 3rem;
+    margin-left: -4rem;
+
+    a {
+        color: $white;
+    }
+}
+
+
+// forms 
+ input, textarea, div.wpforms-container .wpforms-form .choices__inner {
+    padding: 1rem 2rem !important;
+    border-radius: .5rem !important;
+    font-size: .8rem;
+}
+
+::placeholder, div.wpforms-container .wpforms-form .choices__placeholder {
+    color: $info;
+    text-transform: uppercase;
+    font-size: .8rem;
+}
+
+.wpforms-submit-29, #wpforms-submit-59 {
+    @extend .btn;
+    float: left;
+}
+
 
 
 // footer
@@ -324,27 +400,36 @@ textarea:focus::placeholder {
 
     .contact-form {
         color: $info;
-        
-        input, textarea {
-            padding: 1rem 2rem !important;
-            border-radius: .5rem !important;
-            font-size: .8rem;
-            // font-family: 'Source Sans Pro', sans-serif !important;
-        }
+    }
 
-        ::placeholder {
-            color: $info;
-            text-transform: uppercase;
-            font-size: .8rem;
-            // font-family: 'Source Sans Pro', sans-serif !important;
-        }
-
-        #wpforms-submit-29 {
-            @extend .btn;
-            float: left;
-        }
+    ::placeholder {
+        color: $white;
     }
 }
+
+// ARTCILES
+.featured-article {
+    a {
+        color: $white;
+        text-decoration: none;
+    }
+}
+
+#archive-sidebar {
+    .single-tag, .single-year {
+        list-style: none;
+    }
+}
+
+
+// SEARCH
+
+#search-results {
+    .page {
+        // display: none;
+    }
+}
+
 
 footer {
     text-transform: uppercase;

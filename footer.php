@@ -63,7 +63,7 @@ $contact_bool = get_field('contact_form');
 			</div>
 		</div><!-- row end -->
 
-		</div><!-- container end -->
+	</div><!-- container end -->
 </footer><!-- #colophon -->
 
 </div><!-- #page we need this extra closing tag here -->

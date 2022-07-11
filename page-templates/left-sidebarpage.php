@@ -13,13 +13,7 @@ defined( 'ABSPATH' ) || exit;
 get_header();
 ?>
 
-<div class="container" id="content">
-
-	<div class="row pt-5">
-		<div class="col">
-			<span class="bookmarks">Defence Resources > Webinars</span>
-		</div>
-	</div>
+<div class="container-fluid" id="content">
 	
 	
 	<div class="row py-3">

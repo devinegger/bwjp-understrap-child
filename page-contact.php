@@ -15,6 +15,19 @@ defined( 'ABSPATH' ) || exit;
 
 get_header();
 
+$sidebar_content = get_field('contact_sidebar');
+
+// map image array
+$map_image_arr = get_field('map_image');
+
+// break out image array
+$map_image_ID = $map_image_arr['ID'];
+$map_image_url = $map_image_arr['url'];
+$map_image_alt = $map_image_alt['alt'];
+
+// create HTML image
+$map_image = wp_get_attachment_image( $map_image_ID, 'full', array('src' => $map_image_url, 'alt' => $map_image_alt, 'class' => 'img-fluid w-100' ) );
+
 $page_bg_color = get_field('page_background_color');
 
 $content_class = "text-";
@@ -26,11 +39,17 @@ if($page_bg_color['label'] === "White") {
 }
 
 ?>
-<main class="site-main" id="main" style="background-color: <?= $page_bg_color['value'] ?>;">
+<main class="site-main contact-bwjp" id="main" style="background-color: <?= $page_bg_color['value'] ?>;">
 	<div class="container-fluid <?= $content_class ?>" id="content">
-		<div class="row py-5 justify-content-center">
-			<div class="col-12">
-				<div class="container">
+		<div class="row">
+			<div class="col-3 contact-sidebar p-0 d-flex flex-column" style="background-color: #19a5b4;">
+				<div class="sidebar-content p-5 h-100">
+					<?= $sidebar_content ?>
+				</div>
+				<?= $map_image ?>
+			</div>
+			<div class="col-9">
+				<div class="container py-5">
 				
 					<?php
 						while ( have_posts() ) {
@@ -48,7 +67,10 @@ if($page_bg_color['label'] === "White") {
 		</div>
 		<div class="row">
 			<div class="col-12 p-0">
-				<?php get_template_part('template-parts/acf','main'); ?>
+				<section class="contact-form text-info p-5" style="background-color: #19a5b4;">
+					<h3 class="text-uppercase">Email us</h3>
+					<?= apply_shortcodes( '[wpforms id="59" title="false"]', false ) ?>
+				</section>
 			</div>
 		</div><!-- .row -->
 	</div><!-- #content -->

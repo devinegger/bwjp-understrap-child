@@ -8,7 +8,6 @@ $partnerships = get_sub_field('partnerships');
 
 ?>
 
-
 <section class="partnership-cards bg-white">
     <div class="container">
         <div class="row py-5">
