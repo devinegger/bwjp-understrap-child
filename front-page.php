@@ -37,22 +37,16 @@ get_header();
 					</div>
 				</div>
 				<div class="row p-5 text-white text-center justify-content-center">
-					<div class="col-md-8">
-						<h3 class="text-uppercase display-4 py-4 fw-bold">Who We Are</h3>
-						<p>When we look at the current landscape of gender-based violence, we see proof that the justice system isn't always just.</p>
-						<p class="text-uppercase display-6 py-4 fw-bold">And from there, we see solutions.</p>
-						<p>We are BWJP: a collective of national policy and practice centers at the intersection of gender-based violence and legal systems. If you're looking for resources, training, consultations or research, then you're in the right place.</p>
+					<div class="col-md-10">
+						<?php the_field('intro_text', 'options'); ?>
 					</div>
 				</div>
 			</section>
 			<section class="national-gun-violence bg-info">
-				<div class="row py-5">
-					<div class="col-12">
+				<div class="row py-5 justify-content-center">
+					<div class="col-10">
 						<h3 class="fw-bold display-4 text-center">NATIONAL GUN VIOLENCE</h3>
-						<div class="d-flex justify-content-center">
-							<img src="/wp-content/uploads/2022/06/Screen-Shot-2022-06-06-at-6.47.00-PM.png" alt="">
-						</div>
-							
+						<?php echo apply_shortcodes( '[mapsvg id="1"]', false ); ?>
 					</div>
 				</div>
 			</section>

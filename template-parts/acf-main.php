@@ -27,6 +27,11 @@
             get_template_part('template-parts/acf','wysiwyg');
         endif;
 
+        // Shortcode Full Template
+        if (get_row_layout() == 'shortcode_full') :
+            get_template_part('template-parts/acf','shortcode-full');
+        endif;
+
         // Featured Posts Template
         if (get_row_layout() == 'featured_posts') :
             get_template_part('template-parts/acf','featured-posts');

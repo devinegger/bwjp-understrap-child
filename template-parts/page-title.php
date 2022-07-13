@@ -4,7 +4,10 @@
  * Template Part for displaying Page Title  
  */
 
+
 if(is_tax('section')) {
+    $title_bg_color = '#000F9F'; // Blue
+} elseif(is_single() && get_post_type( get_the_ID()) === 'site-resources') {
     $title_bg_color = '#000F9F'; // Blue
 } elseif(is_home() || is_single() || is_archive() || is_date()) {
     $title_bg_color = "#FF4D00"; // Orange
@@ -28,12 +31,14 @@ $title_split = explode(" ", $title, 2);
                 <header class="entry-header">
                     <div class="jumbotron jumbotron-fluid" style="background-color: <?= $title_bg_color; ?> ;">
                         <div class="container text-start text-light py-5">
-                            <?php if(is_home() || is_single() || is_date()): ?>
+                            <?php if(is_tax('section')) : ?>
+                                <h1 class="entry-title text-uppercase display-4 fw-bold">Resources</h1>
+                            <?php elseif(is_single() && get_post_type( get_the_ID()) === 'site-resources'): ?>
+                                <h1 class="entry-title text-uppercase display-4 fw-bold">Resources</h1>
+                            <?php elseif(is_home() || is_single() || is_date()): ?>
                                 <h1 class="entry-title text-uppercase display-4 fw-bold">Articles</h1>
                             <?php elseif(is_search()): ?>
                                 <h1 class="entry-title text-uppercase display-4 fw-bold">Search Results</h1>
-                            <?php elseif(is_tax('section')): ?>
-                                <h1 class="entry-title text-uppercase display-4 fw-bold">Resources</h1>
                             <?php elseif(is_archive()):?>
                                 <?php the_archive_title('<h1 class="entry-title text-uppercase display-4 fw-bold">','</h1>') ?>
                             <?php else: ?>

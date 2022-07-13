@@ -8,10 +8,6 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-if ( ! is_active_sidebar( 'our-work-sidebar' ) ) {
-	return;
-}
-
 $post_years = get_post_years();
 $all_tags = get_tags();
 
