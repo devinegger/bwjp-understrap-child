@@ -437,10 +437,22 @@ textarea:focus::placeholder {
 
 
 // SEARCH
+.search-nav {
+    .nav-item {
+        background: $info;
 
-#search-results {
-    .page {
-        // display: none;
+        .nav-link {
+            text-transform: uppercase;
+        }
+
+        .nav-link:not(.active) {
+            color: $white;
+        }
+    }
+}
+.search-results {
+    .results:not(.active) {
+        display: none;
     }
 }
 

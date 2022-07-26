@@ -14,133 +14,129 @@ $our_work_posts = array();
 $resource_posts = array();
 $article_posts = array();
 
-
 ?>
+
 <main class="site-main" id="main">
 
-	<div class="container" id="content" tabindex="-1">
+	<?php if ( have_posts() ) : ?>
+		
+		<div class="container-fluid">
+			<div class="row search-nav bg-primary text-white">
+				<div class="col">
+					<div class="container">
+						<ul class="nav nav-tabs">
+							<li class="nav-item">
+								<a class="nav-link active" aria-current="page" href="#" data-target="our-work">Our Work</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#" data-target="resources">Resources</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#" data-target="articles">Articles</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div><!-- .search-nav -->
+		</div>
 
-		<div class="row">
-			<div class="col-12">	
-				Search: <?php get_search_form(); ?>
+		<?php
+		while ( have_posts() ) : the_post();
+
+			switch(get_post_type()) {
+				case "post":
+					$article_posts[] = $post;
+					break;
+				case "page":
+					$our_work_posts[] = $post;
+					break;
+				case "site-resources":
+					$resource_posts[] = $post;
+					break;
+			}
+
+		endwhile;
+		?>
+
+		<div class="container search-results" id="content" tabindex="-1">
+			<div class="row our-work results active">
+				<h2 class="visually-hidden">Our Work</h2>
+				<?php if($our_work_posts): ?>
+					<?php foreach($our_work_posts as $our_work_post) : ?>
+						<div class="col-md-4 p-3">
+							<div class="article text-info p-3" style="background-color: #C6D2DB;">
+								<h3 class="text-uppercase fs-5"><a href="<?= get_the_permalink($our_work_post->ID); ?>"><?= $our_work_post->post_title ?></a></h3>
+								<?= get_the_author_meta('display_name',$our_work_post->post_author) . " | " . get_the_date('F d Y', $our_work_post->ID ) ?>
+								<p><?= $our_work_post->post_excerpt ?></p>
+								<?php $article_tags = get_the_tags($our_work_post->ID); ?>
+								<span class="text-uppercase">TAGS: 
+									<?php foreach($article_tags as $tag): ?>
+										<?= '#' . $tag->name . ' ' ?>
+									<?php endforeach; ?>
+								</span>
+							</div>
+						</div>
+					<?php endforeach; ?>
+				<?php else: ?>
+					<p class="p-5">No results for Our Work, check Resources or Articles tabs</p>
+				<?php endif; ?>
 			</div>
 
-			<div class="col-12">
-				
-				<?php if ( have_posts() ) : ?>
-
-					<header class="page-header">
-						<h2 class="page-title">
-							<?php
-							printf(
-								/* translators: %s: query term */
-								esc_html__( 'Search Results for: %s', 'understrap' ),
-								'<span>' . get_search_query() . '</span>'
-							);
-							?>
-						</h2>
-					</header><!-- .page-header -->
-
-					<?php
-					while ( have_posts() ) : the_post();
-
-						switch(get_post_type()) {
-							case "post":
-								$article_posts[] = $post;
-								break;
-							case "page":
-								$our_work_posts[] = $post;
-								break;
-							case "site-resources":
-								$resource_posts[] = $post;
-								break;
-						}
-									
-							// get_template_part( 'loop-templates/content', 'search' );
-
-					endwhile;
-					?>
-
-					<div class="container-fluid" id="search-results">
-						<div class="row">
-							<h3>Resources</h3>
-							<?php foreach($resource_posts as $resource_post) : ?>
-								<?php setup_postdata($resource_post); ?>
-								<div class="col-md-4 p-3">
-									<div class="article text-info p-3" style="background-color: #C6D2DB;">
-										<h3 class="text-uppercase"><a href="<?= the_permalink(); ?>"><?= the_title(); ?></a></h3>
-										<?php understrap_posted_on(); ?>
-										<p><?= wp_trim_words(get_the_content(), 20); ?></p>
-										<?php $article_tags = get_the_tags($post->ID); ?>
-										<span class="text-uppercase">TAGS: 
-											<?php foreach($article_tags as $tag): ?>
-												<?= '#' . $tag->name . ' ' ?>
-											<?php endforeach; ?>
-										</span>
-									</div>
-								</div>
-							<?php endforeach; ?>
-							<?php wp_reset_postdata(); ?>
-							<?php understrap_pagination(); ?>
+			<div class="row resources results">
+				<h2 class="visually-hidden">Resources</h2>
+				<?php if($resource_posts): ?>
+					<?php foreach($resource_posts as $resource_post) : ?>
+						<div class="col-md-4 p-3">
+							<div class="article text-info p-3" style="background-color: #C6D2DB;">
+								<h3 class="text-uppercase fs-5"><a href="<?= get_the_permalink($resource_post->ID); ?>"><?= $resource_post->post_title ?></a></h3>
+								<?= get_the_author_meta('display_name',$resource_post->post_author) . " | " . get_the_date('F d Y', $resource_post->ID ) ?>
+								<p><?= $resource_post->post_excerpt ?></p>
+								<?php $article_tags = get_the_tags($resource_post->ID); ?>
+								<span class="text-uppercase">TAGS: 
+									<?php foreach($article_tags as $tag): ?>
+										<?= '#' . $tag->name . ' ' ?>
+									<?php endforeach; ?>
+								</span>
+							</div>
 						</div>
-						<div class="row">
-							<h3>Articles</h3>
-							<?php foreach($article_posts as $article_post) : ?>
-								<?php setup_postdata($article_post); ?>
-								<div class="col-md-4 p-3">
-									<div class="article text-info p-3" style="background-color: #C6D2DB;">
-										<h3 class="text-uppercase"><a href="<?= the_permalink(); ?>"><?= the_title(); ?></a></h3>
-										<?php understrap_posted_on(); ?>
-										<p><?= wp_trim_words(get_the_content(), 20); ?></p>
-										<?php $article_tags = get_the_tags($post->ID); ?>
-										<span class="text-uppercase">TAGS: 
-											<?php foreach($article_tags as $tag): ?>
-												<?= '#' . $tag->name . ' ' ?>
-											<?php endforeach; ?>
-										</span>
-									</div>
-								</div>
-							<?php endforeach; ?>
-							<?php wp_reset_postdata(); ?>
-							<?php understrap_pagination(); ?>
-						</div>
-						<div class="row">
-							<h3>Our Work</h3>
-							<?php foreach($our_work_posts as $our_work_post) : ?>
-								<?php setup_postdata($our_work_post); ?>
-								<div class="col-md-4 p-3">
-									<div class="article text-info p-3" style="background-color: #C6D2DB;">
-										<h3 class="text-uppercase"><a href="<?= the_permalink(); ?>"><?= the_title(); ?></a></h3>
-										<?php understrap_posted_on(); ?>
-										<p><?= wp_trim_words(get_the_content(), 20); ?></p>
-										<?php $article_tags = get_the_tags($post->ID); ?>
-										<span class="text-uppercase">TAGS: 
-											<?php foreach($article_tags as $tag): ?>
-												<?= '#' . $tag->name . ' ' ?>
-											<?php endforeach; ?>
-										</span>
-									</div>
-								</div>
-							<?php endforeach; ?>
-							<?php wp_reset_postdata(); ?>
-							<?php understrap_pagination(); ?>
-						</div>
-					</div>
-
-				<?php else : ?>
-
-					<?php get_template_part( 'loop-templates/content', 'none' ); ?>
-
+					<?php endforeach; ?>
+				<?php else: ?>
+					<p class="p-5">No results for Resources, check Our Work or Articles tabs</p>
 				<?php endif; ?>
+			</div>
 
-			
+			<div class="row articles results">
+				<h2 class="visually-hidden">Articles</h2>
+				<?php if($article_posts): ?>
+					<?php foreach($article_posts as $article_post) : ?>
+						<div class="col-md-4 p-3">
+							<div class="article text-info p-3" style="background-color: #C6D2DB;">
+								<h3 class="text-uppercase fs-5"><a href="<?= get_the_permalink($article_post->ID); ?>"><?= $article_post->post_title ?></a></h3>
+								<?= get_the_author_meta('display_name',$article_post->post_author) . " | " . get_the_date('F d Y', $article_post->ID ) ?>
+								<p><?= $article_post->post_excerpt ?></p>
+								<?php $article_tags = get_the_tags($article_post->ID); ?>
+								<span class="text-uppercase">TAGS: 
+									<?php foreach($article_tags as $tag): ?>
+										<?= '#' . $tag->name . ' ' ?>
+									<?php endforeach; ?>
+								</span>
+							</div>
+						</div>
+					<?php endforeach; ?>
+				<?php else: ?>
+					<p class="p-5">No results for Articles, check Our Work or Resources tabs</p>
+				<?php endif; ?>
+			</div>
+		</div><!-- #content -->
 
-			<!-- The pagination component -->
-			
+	<?php else : ?>
 
-		</div><!-- .row -->
+		<div class="container p-5">
+			<?php get_template_part( 'loop-templates/content', 'none' ); ?>
+		</div>
 
-	</div><!-- #content -->
+	<?php endif; ?>
+
 </main><!-- #main -->
 
 <?php

@@ -6,7 +6,6 @@
 
 $headline = get_sub_field('headline');
 $resources = get_sub_field('selected_resources');
-print_r($resources);
 
 ?>
 

@@ -9299,7 +9299,23 @@
 	// Add your custom JS here.
 	(function ($) {
 	  $(document).ready(function ($) {
-	    // toggle circle container appearance on click
+	    $('.search-nav .nav-link').click(function () {
+	      //alert('hello');
+	      if (!$(this).hasClass('active')) {
+	        // if the clicked nav-link is not active
+	        let target = $(this).data('target'); // target is results row to show when clicked
+	        // change tabs
+
+	        $('.search-nav .nav-link.active').removeClass('active'); // remove the active class from current active
+
+	        $(this).addClass('active'); // give this link active class
+
+	        $('.search-results .results.active').removeClass('active'); // remove the active class from results row
+
+	        $('.search-results .results.' + target).addClass('active'); // give target resutls row active class
+	      }
+	    }); // toggle circle container appearance on click
+
 	    $('.circle-container').click(function () {
 	      $(this).toggleClass('bg-white');
 	      $(this).find('.front').toggleClass('d-none');
