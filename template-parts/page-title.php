@@ -7,6 +7,10 @@
 $title = get_the_title();
 $title_split = explode(" ", $title, 2); // split title so that first word can be bolded
 
+$parent_id = wp_get_post_parent_id( $post->ID );
+$parent_title = get_the_title($parent_id);
+$parent_url = get_permalink($parent_id);
+
 $page_title = '';
 $page_crumb = '';
 $parent_crumb = '';
@@ -16,7 +20,7 @@ if(is_tax('section')) {
     $title_bg_color = '#000F9F'; // Blue
     $page_title = "Resources";
     $page_crumb = get_the_archive_title();
-    $parent_crumb = "Resources";
+    $parent_crumb = "Resources"; 
 } elseif(is_single() && get_post_type( get_the_ID()) === 'site-resources') {
     $title_bg_color = '#000F9F'; // Blue
     $page_title = "Resources";
@@ -32,14 +36,21 @@ if(is_tax('section')) {
     $page_title = "Articles";
     $page_crumb =  get_the_title();
     $parent_crumb = 'News / <a href="/articles/">Articles</a>';
+} elseif(is_singular() && $post->post_name === 'search') {
+    $title_bg_color = '#6938E6'; // Purple
+    $page_title = "Search";
+    $page_crumb = "Search";
+    $parent_crumb = "";  
 } elseif(is_search()) {
     $title_bg_color = "#6938E6"; // Purple 
     $page_title = "Search Results";
+    $parent_title = "";
+    $parent_crumb = "";
 } else {
     $title_bg_color = get_field('title_background_color');
     $page_title = get_the_title();
     $page_crumb = get_the_title();
-    $parent_crumb = "";
+    $parent_crumb = $parent_title;
 }
 
 
