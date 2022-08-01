@@ -14,7 +14,11 @@ $resources = get_sub_field('selected_resources');
     <div class="container-fluid">
         <div class="row py-5">
             <div class="col-12">
-                <h3 class="text-info fw-bold display-5 text-center text-uppercase"><?= $headline; ?></h3>
+                <div class="container">
+                    <div class="slidein-left-effect title-parent">
+                        <h3 class="text-info fw-bold display-5 text-center text-uppercase d-inline-block"><?= $headline; ?></h3> <span class="disappear text-uppercase"><?= $headline; ?></span>
+                    </div>
+                </div>
                 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">

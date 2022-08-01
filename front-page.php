@@ -24,8 +24,8 @@ get_header();
 			<section class="home-main">
 				<div class="row justify-content-center px-5 pt-5">
 					<div class="col-10" style="z-index: 800;">
-						<h2 class="text-uppercase text-light text-left display-3 headline"><span class="first-line">Changing Systems</span>
-						<br/>Transforming Lives</h2>
+						<h2 class="text-uppercase text-light text-left display-3 headline"><span class="first-line slidein-right-effect d-inline-block">Changing Systems</span>
+						<br/><span class="slidein-left-effect d-inline-block">Transforming Lives</span></h2>
 					</div>
 				</div>
 				<div class="row" style="position: relative; z-index: 1;">
@@ -45,7 +45,10 @@ get_header();
 			<section class="national-gun-violence bg-info">
 				<div class="row py-5 justify-content-center">
 					<div class="col-10">
-						<h3 class="fw-bold display-4 text-center">NATIONAL GUN VIOLENCE</h3>
+						<!-- commenting out non-accessible parts for now - DGE -->
+						<div class="slidein-left-effect title-parent">
+							<h3 class="fw-bold fs-1 text-white d-inline-block">NATIONAL GUN VIOLENCE</h3> <span class="disappear effect d-inline-block">NATIONAL GUN VIOLENCE</span>
+						</div>
 						<?php echo apply_shortcodes( '[mapsvg id="1"]', false ); ?>
 					</div>
 				</div>

@@ -9347,6 +9347,51 @@
 	      $('.search').addClass('active');
 	    }
 	  });
+	})(jQuery); // adding animations
+
+
+	(function ($) {
+	  //* Make sure JS is enabled
+	  document.documentElement.className = "js";
+	  $(document).ready(function () {
+	    //* Run 0.25 seconds after document ready for any instances viewable on load
+	    setTimeout(function () {
+	      animateObjects();
+	    }, 250);
+	  });
+	  $(window).scroll(function () {
+	    //* Run on scroll
+	    animateObjects();
+	  });
+
+	  function animateObjects() {
+	    //* Define your object via class
+	    var objectLeft = $('.slidein-left-effect'); //* Loop through each object in the array
+
+	    $.each(objectLeft, function () {
+	      var windowHeight = $(window).height(),
+	          offset = $(this).offset().top,
+	          top = offset - $(document).scrollTop(),
+	          percent = Math.floor(top / windowHeight * 100);
+
+	      if (percent < 80) {
+	        $(this).addClass('slideInLeft');
+	      }
+	    }); //* Define your object via class
+
+	    var objectRight = $('.slidein-right-effect'); //* Loop through each object in the array
+
+	    $.each(objectRight, function () {
+	      var windowHeight = $(window).height(),
+	          offset = $(this).offset().top,
+	          top = offset - $(document).scrollTop(),
+	          percent = Math.floor(top / windowHeight * 100);
+
+	      if (percent < 80) {
+	        $(this).addClass('slideInRight');
+	      }
+	    });
+	  }
 	})(jQuery);
 
 	exports.Alert = alert;

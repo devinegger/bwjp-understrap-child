@@ -18,7 +18,7 @@ $partnerships = get_sub_field('partnerships');
                     $image_URL = $image_arr['url']; 
                     $image_alt = $image_arr['alt']; 
                     $image = wp_get_attachment_image( $image_ID, 'full', FALSE, array('src'=>$image_URL, 'class'=> 'partnership-image img-fluid', 'alt'=>$image_alt) ); ?>
-            <div class="col-md-4 mb-4 px-lg-4 px-xl-5">
+            <div class="col-md-4 mb-4 px-lg-4 px-xl-5 slidein-left-effect">
                 <div class="card h-100">
                     <div class="card-body bg-info text-white">
                         <div class="image-wrapper d-flex align-items-center justify-content-center bg-white w-100">

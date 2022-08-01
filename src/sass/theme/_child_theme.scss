@@ -161,6 +161,8 @@ textarea:focus::placeholder {
     }
 }
 
+
+
 // page templates
 #page-title {
     .breadcrumbs {
@@ -221,15 +223,27 @@ textarea:focus::placeholder {
             }
         }
     }
+
+    .disappear {
+        color: $dark-gray;
+        font-size: 4rem;
+        font-weight: bold;
+    }
 }
 
 
 // national gun violence
-
 .national-gun-violence {
-    h3 {
+    .disappear {
         color: $light-blue;
+        font-size: 4rem;
+        font-weight: bold;
     }
+}
+
+.title-parent {
+    overflow: hidden;
+    width: 3000px;
 }
 
 
@@ -299,6 +313,8 @@ textarea:focus::placeholder {
 .partnership-cards {
     .image-wrapper {
         height: 15rem;
+        width: 15rem; 
+        overflow: hidden;
     }
 }
 
@@ -408,19 +424,6 @@ textarea:focus::placeholder {
 }
 
 
-// footer
-.footer-contact {
-    background-color: $teal;
-
-    .contact-form {
-        color: $info;
-    }
-
-    ::placeholder {
-        color: $info;
-    }
-}
-
 // ARTCILES
 .featured-article {
     a {
@@ -453,6 +456,19 @@ textarea:focus::placeholder {
 .search-results {
     .results:not(.active) {
         display: none;
+    }
+}
+
+// footer
+.footer-contact {
+    background-color: $teal;
+
+    .contact-form {
+        color: $info;
+    }
+
+    ::placeholder {
+        color: $info;
     }
 }
 
