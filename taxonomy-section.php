@@ -15,25 +15,6 @@ defined( 'ABSPATH' ) || exit;
 
 get_header();
 
-if(!empty($_POST['email'])) {
-	$user_email = $_POST['email'];
-
-	create_verification($user_email);
-}
-
-if(!empty($_POST['code'])) {
-	$verification_code = $_POST['code'];
-
-	echo $verification_code;
-
-	$verification_id = $_COOKIE["Verification_ID"];
-
-	echo '<br/>' . $verification_id;
-
-	verify_code($verification_id, $verification_code);
-
-}
-
 // get this current section(category)s ID
 $current_section = get_queried_object();
 $current_section_id = $current_section->term_id;
@@ -48,41 +29,6 @@ $image = wp_get_attachment_image( $image_ID, 'full', FALSE, array('src'=>$image_
 
 <main class="site-main resource-sections" id="main" style="background-color: #000F9F;">
 	
-	<?php if(check_verification() === "unsent") : ?>
-	
-	<div class="container">
-		<div class="row -5 justify-content-center text-white">
-			<div class="col">
-				<p>The resources on this site require email verification in order to view them.</p>  
-				<p>Submit your email below and we will send you a verification code.</p>
-				<p>Once you've received the email copy and paste it back here to get access.</p>
-				<form method="post">
-					<label for="email-for-verification">Your Email</label>
-					<input type="text" id="email-for-verification" name="email">
-					<input type="submit" value="submit">
-				</form>
-			</div>
-		</div>
-	</div>
-
-	<?php elseif(check_verification() === "sent" || check_verification() === "unverified" ): ?>
-
-		<div class="container">
-			<div class="row p-5 justify-content-center text-white">
-				<div class="col">
-					<p>The resources on this site require email verification in order to view them.</p>  
-					<p>Submit email verification code below: </p>
-					<form method="post">
-						<label for="verification-code">Verification Code</label>
-						<input type="text" id="verification-code" name="code">
-						<input type="submit" value="submit">
-					</form>
-				</div>
-			</div>
-		</div>
-
-	<?php elseif(check_verification() === "verified"): ?>
-
 	<div class="container-fluid" id="content">
 		<div class="row pt-5 justify-content-center text-white">
 			<div class="col-md-7 p-0">
@@ -119,8 +65,6 @@ $image = wp_get_attachment_image( $image_ID, 'full', FALSE, array('src'=>$image_
 			</div>
 		</div><!-- .row -->
 	</div><!-- #content -->
-
-	<?php endif; ?>
 
 </main><!-- #main -->
 
