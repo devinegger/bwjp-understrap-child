@@ -18,25 +18,23 @@ get_header();
 // user has not been sent verification yet
 $verification_sent = false;
 
-if(!empty($_POST['email'])) {
+if(!empty($_POST['email']) && $_POST['email']!== '') {
 	$user_email = $_POST['email'];
-
 	create_verification($user_email);
 
-	$verification_sent = true;
+	// change value of email to 'sent' to help with forms before cookies are available
+	$_POST['email'] = 'sent'; 
 }
 
 if(!empty($_POST['code'])) {
 	$verification_code = $_POST['code'];
-
-	echo $verification_code;
-
 	$verification_id = $_COOKIE["bwjpVID"];
 
-	echo '<br/>' . $verification_id . '<br/>';
-
- 	print_r(verify_code($verification_id, $verification_code));
-
+ 	if(verify_code($verification_id, $verification_code)) {
+		$_POST['code'] = 'verified'; // clear post data
+	} else {
+		$_POST['code'] = 'unverified'; // clear post data
+	};
 }
 
 // get this current section(category)s ID
@@ -48,32 +46,31 @@ $image_ID = $image_arr['ID'];
 $image_URL = $image_arr['url']; 
 $image_alt = $image_arr['alt']; 
 $image = wp_get_attachment_image( $image_ID, 'full', FALSE, array('src'=>$image_URL, 'class'=> 'img-fluid', 'alt'=>$image_alt) );
-
 ?>
 
 <main class="site-main resource-sections" id="main" style="background-color: #000F9F;">
 
 	<?= $_COOKIE['bwjpVS'] ?>
 	
-	<?php if(!isset($_COOKIE['bwjpVS'])) : // if cookie is not set, email has not yet been submitted, show email form ?>
+	<?php if(!isset($_COOKIE['bwjpVS']) && $_POST['email']!== 'sent') : // if cookie is not set, email has not yet been submitted, show email form ?>
 
 	
-		<div class="container">
-			<div class="row -5 justify-content-center text-white">
+		<div class="container ">
+			<div class="row py-5 justify-content-center text-white">
 				<div class="col">
 					<p>The resources on this site require email verification in order to view them.</p>  
 					<p>Submit your email below and we will send you a verification code.</p>
 					<p>Once you've received the email copy and paste it back here to get access.</p>
-					<form method="post">
+					<form method="post" action="#">
 						<label for="email-for-verification">Your Email</label>
-						<input type="text" id="email-for-verification" name="email">
+						<input type="text" id="email-for-verification" name="email" size="30">
 						<input type="submit" value="submit">
 					</form>
 				</div>
 			</div>
 		</div>
 
-	<?php elseif($_COOKIE['bwjpVS'] === '0'): // if cookie is set, but not set to 0, user has not been verified yet ?>
+	<?php elseif(($_COOKIE['bwjpVS'] === '0' && $_POST['code'] !== 'verified') || $_POST['email'] === 'sent' ): // if cookie is set, but not set to 0, user has not been verified yet ?>
 
 		<div class="container">
 			<div class="row p-5 justify-content-center text-white">
@@ -82,14 +79,14 @@ $image = wp_get_attachment_image( $image_ID, 'full', FALSE, array('src'=>$image_
 					<p>Submit email verification code below: </p>
 					<form method="post">
 						<label for="verification-code">Verification Code</label>
-						<input type="text" id="verification-code" name="code">
+						<input type="text" id="verification-code" name="code" size="30">
 						<input type="submit" value="submit">
 					</form>
 				</div>
 			</div>
 		</div>
 
-	<?php elseif($_COOKIE['bwjpVS'] === '1'): // user is verified, show content ?>
+	<?php elseif($_COOKIE['bwjpVS'] === '1' || $_POST['code']==='verified'): // user is verified, show content ?>
 
 		<div class="container-fluid" id="content">
 			<div class="row pt-5 justify-content-center text-white">
@@ -127,6 +124,16 @@ $image = wp_get_attachment_image( $image_ID, 'full', FALSE, array('src'=>$image_
 				</div>
 			</div><!-- .row -->
 		</div><!-- #content -->
+
+	<?php elseif($_POST['code'] === 'unverified') : ?>
+
+		<div class="container">
+			<div class="row p-5 justify-content-center text-white">
+				<div class="col">
+					<p>The code you enterred is not valid, please refresh the page and try again</p>
+				</div>
+			</div>
+		</div>
 
 	<?php else : ?>
 

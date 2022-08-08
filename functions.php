@@ -243,55 +243,6 @@ function hdc_change_search_url() {
 }
 add_action( 'template_redirect', 'hdc_change_search_url' );
 
-/**
- *  Cookies:
- * bwjpVS: verification status
- * bwjpVS = 0
- *
- *
- *
- *
- *
- *
- */
-
-
-/*
-
-don't need these anymore 
-
-function is_user_verified() {
-	if(isset($_COOKIE["bwjpVS"])) {
-		if($_COOKIE["Verification_Status"] === "verified") {
-			return 'verified';
-		} elseif($_COOKIE["Verification_Status"] === "emailed") {
-			return 'sent';
-		}
-		} elseif($_COOKIE["Verification_Status"] === "unverified") {
-			return 'unverified';
-	} else {
-		return 'unsent';
-	}
-}
-
-
-
-function check_verification() {
-	if(isset($_COOKIE["Verification_Status"])) {
-		if($_COOKIE["Verification_Status"] === "verified") {
-			return 'verified';
-		} elseif($_COOKIE["Verification_Status"] === "emailed") {
-			return 'sent';
-		}
-		} elseif($_COOKIE["Verification_Status"] === "unverified") {
-			return 'unverified';
-	} else {
-		return 'unsent';
-	}
-}
-
-
-*/
 
 // create row in DB for email and verification, set cookie for verification ID, send user email
 function create_verification($email) {
@@ -299,7 +250,7 @@ function create_verification($email) {
 	global $wpdb;
 	$sanitized_email = sanitize_email($email);
 	$verification = wp_generate_password(20, false, false);
-	$verification_has = wp_hash($validation);
+	$verification_has = wp_hash($verification);
 
 
 	$wpdb->insert(
@@ -307,37 +258,41 @@ function create_verification($email) {
 		array(
 			'user_email' => sanitize_text_field( $sanitized_email ),
 			'verification' => $verification_has,
-			'submitted' => date(),
+			'submitted' => date( 'Y-m-d', strtotime( 'now' ) ),
 			'verified' => 0,
 		)
 	);
 
 	setcookie("bwjpVID", $wpdb->insert_id);
 
-	setcookie("bwjpVS", 0);
+	setcookie('bwjpVS', 0, time() + 3600, '/');
 
-
-	// will send code to user instead - for now set a cookie
-	setcookie("bevc", $verification);
-
+	wp_mail(
+		$sanitized_email,
+		'Your verification code for BWJP',
+		'<p>Here is your verification code:</p><p>' . $verification . '</p>',
+		array( 'Content-Type: text/html; charset=UTF-8' ),
+	);
 }
 
 function verify_code($id, $verification) {
 
-	$verification_has = wp_hash($verification);
-
 	global $wpdb;
-	$sql = "SELECT * FROM wp_bwjp_email_verification WHERE ID = $id AND verification = '" . $verification_has ."';";
+
+	$table_name = $wpdb->base_prefix . 'bwjp_email_verification';
+	$verification_has = wp_hash( $verification );
+	
+	$sql = "SELECT * FROM $table_name WHERE ID = '$id' AND verification = '$verification_has'";
 	$result = $wpdb->get_row($sql);
 
-	return $verification_has;
-
-	/*
-	if($result) {
-		setcookie("Verification_Status", "verified");
-	} else {
-		setcookie("Verification_Status", "unverified");
+	if ($result) {
+		setcookie('bwjpVS', 1, time() + 3600, '/');
+		$wpdb->update($table_name, ['verified'=>'1'], ['ID'=>$id]);
+		return true;
+	}  else {
+		return false;
 	}
-	*/
+
+
 }
 
