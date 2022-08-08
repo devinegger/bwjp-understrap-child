@@ -15,6 +15,7 @@ defined( 'ABSPATH' ) || exit;
 
 get_header();
 
+
 // user has not been sent verification yet
 $verification_sent = false;
 
@@ -37,6 +38,7 @@ if(!empty($_POST['code'])) {
 	};
 }
 
+
 // get this current section(category)s ID
 $current_section = get_queried_object();
 $current_section_id = $current_section->term_id;
@@ -52,6 +54,7 @@ $image = wp_get_attachment_image( $image_ID, 'full', FALSE, array('src'=>$image_
 
 	<?= $_COOKIE['bwjpVS'] ?>
 	
+
 	<?php if(!isset($_COOKIE['bwjpVS']) && $_POST['email']!== 'sent') : // if cookie is not set, email has not yet been submitted, show email form ?>
 
 	
@@ -144,8 +147,6 @@ $image = wp_get_attachment_image( $image_ID, 'full', FALSE, array('src'=>$image_
 				</div>
 			</div>
 		</div>
-
-	<?php endif; ?>
 
 </main><!-- #main -->
 

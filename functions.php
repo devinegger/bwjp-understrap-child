@@ -244,6 +244,7 @@ function hdc_change_search_url() {
 add_action( 'template_redirect', 'hdc_change_search_url' );
 
 
+
 // create row in DB for email and verification, set cookie for verification ID, send user email
 function create_verification($email) {
 
