@@ -24,7 +24,7 @@ $partnerships = get_sub_field('partnerships');
                         <div class="image-wrapper d-flex align-items-center justify-content-center bg-white w-100">
                             <?= $image ?>
                         </div>
-                        <h5 class="card-title text-uppercase text-center fs-6 pt-3"><?= $name; ?></h5>
+                        <h2 class="card-title text-uppercase text-center fs-6 pt-3"><?= $name; ?></h2>
                     </div>
                 </div>
             </div>

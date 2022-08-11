@@ -21,11 +21,12 @@ $image = wp_get_attachment_image( $image_ID, 'full', FALSE, array('src'=>$image_
 ?>
 
 <div class="col-md-4 p-0 widget-area bg-info text-white" id="our-work-sidebar">
-	<div class="mb-3 p-5">
-		<?php dynamic_sidebar( 'our-work-sidebar' ); ?>
-	</div>
-	<div class="sidebar-image">
-		<?= $image; ?>
-	</div>
-	
+	<aside role="complimentary">
+		<div class="mb-3 p-5">
+			<?php dynamic_sidebar( 'our-work-sidebar' ); ?>
+		</div>
+		<div class="sidebar-image">
+			<?= $image; ?>
+		</div>
+	</aside>
 </div><!-- #left-sidebar -->

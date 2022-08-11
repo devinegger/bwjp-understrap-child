@@ -34,10 +34,12 @@ get_header();
 
 			</main><!-- #main -->
 			<div class="content-bottom bg-primary">
-				<div class="content-tools bg-info text-white">
-					<h3>TOOLS</h3>
-					<?= the_field('tools_content');  ?> 
-				</div>
+				<aside role="complimentary">
+					<div class="content-tools bg-info text-white">
+						<h3>TOOLS</h3>
+						<?= the_field('tools_content');  ?> 
+					</div>
+				</aside>	
 			</div>
 		</div><!-- .content-area -->
 	</div><!-- .row -->

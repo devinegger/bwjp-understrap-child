@@ -52,10 +52,9 @@ $image = wp_get_attachment_image( $image_ID, 'full', FALSE, array('src'=>$image_
 
 <main class="site-main resource-sections" id="main" style="background-color: #000F9F;">
 
-	<?= $_COOKIE['bwjpVS'] ?>
-	
-
-	<?php if(!isset($_COOKIE['bwjpVS']) && $_POST['email']!== 'sent') : // if cookie is not set, email has not yet been submitted, show email form ?>
+	<?php if(!isset($_COOKIE['bwjpVS']) && $_POST['email']!== 'sent') : 
+	// if cookie is not set, email has not yet been submitted, show email form 
+	// cookie is not set at page refresh, so also checking to $_POST 'email' variables ?>
 
 	
 		<div class="container ">
@@ -67,23 +66,25 @@ $image = wp_get_attachment_image( $image_ID, 'full', FALSE, array('src'=>$image_
 					<form method="post" action="#">
 						<label for="email-for-verification">Your Email</label>
 						<input type="text" id="email-for-verification" name="email" size="30">
-						<input type="submit" value="submit">
+						<input class="btn" type="submit" value="submit" role="button">
 					</form>
 				</div>
 			</div>
 		</div>
 
-	<?php elseif(($_COOKIE['bwjpVS'] === '0' && $_POST['code'] !== 'verified') || $_POST['email'] === 'sent' ): // if cookie is set, but not set to 0, user has not been verified yet ?>
+	<?php elseif(($_COOKIE['bwjpVS'] === '0' && $_POST['code'] !== 'verified') || $_POST['email'] === 'sent' ): 
+	// if cookie is set, but not set to 0, user has not been verified yet 
+	// cookie is not set at page refresh, so also checking $_POST 'code' and $_POST 'email' variables ?>
 
 		<div class="container">
-			<div class="row p-5 justify-content-center text-white">
+			<div class="row py-5 justify-content-center text-white">
 				<div class="col">
 					<p>The resources on this site require email verification in order to view them.</p>  
 					<p>Submit email verification code below: </p>
 					<form method="post">
 						<label for="verification-code">Verification Code</label>
 						<input type="text" id="verification-code" name="code" size="30">
-						<input type="submit" value="submit">
+						<input class="btn" type="submit" value="submit" role="button">
 					</form>
 				</div>
 			</div>
@@ -147,6 +148,8 @@ $image = wp_get_attachment_image( $image_ID, 'full', FALSE, array('src'=>$image_
 				</div>
 			</div>
 		</div>
+
+	<?php endif; ?>
 
 </main><!-- #main -->
 

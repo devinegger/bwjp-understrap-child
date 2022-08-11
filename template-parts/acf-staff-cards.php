@@ -13,7 +13,7 @@ $staff_members = get_sub_field('staff_members');
 <section class="staff-cards">
     <div class="container">
         <div class="row py-5">
-            <h3 class="text-info text-uppercase"><?= $headline; ?></h3>
+            <h2 class="text-info text-uppercase"><?= $headline; ?></h2>
             <?php foreach($staff_members as $member) : ?>
                 <?php $name = $member['name']; ?>
                 <?php $name_id = strtolower(str_replace(array(" ", ","), array("-", ""), $name)); ?>
@@ -25,13 +25,13 @@ $staff_members = get_sub_field('staff_members');
                     $image_URL = $image_arr['url']; 
                     $image_alt = $image_arr['alt']; 
                     $image = wp_get_attachment_image( $image_ID, 'full', FALSE, array('src'=>$image_URL, 'class'=> 'member-image img-fluid', 'alt'=>$image_alt) ); ?>
-            <div class="col-md-4">
-                <div class="card">
+            <div class="col-md-4 pb-2">
+                <div class="card h-100">
                     <div class="card-body bg-info text-white">
                         <?= $image ?>
-                        <h5 class="card-title text-uppercase text-center fs-3 pt-3">
+                        <h3 class="card-title text-uppercase text-center fs-3 pt-3">
                             <a href="#" class="text-decoration-none stretched-link text-white" data-bs-toggle="modal" data-bs-target="#<?= $name_id ?>">Meet <?= $name; ?></a>
-                        </h5>
+                        </h3>
                     </div>
                 </div>
             </div>
@@ -50,9 +50,11 @@ $staff_members = get_sub_field('staff_members');
                                         
                                     </div>
                                     <div class="col-md-8">
-                                        <h3 class="mb-0 mt-1 fw-bold fs-3" id="<?= $name_id ?>Label"><?= $name ?></h3>
-                                        <span class="pronouns">(<?= $pronouns ?>)</span>
-                                        <h4 class="mb-2 fw-light fs-6"><?= $job_title ?></h4>
+                                        <h2 class="mb-0 mt-1 fw-bold fs-3" id="<?= $name_id ?>Label"><?= $name ?></h2>
+                                        <?php if($pronouns) : ?>
+                                            <span class="pronouns">(<?= $pronouns ?>)</span>
+                                        <?php endif; ?>
+                                        <h3 class="mb-2 fw-light fs-6"><?= $job_title ?></h3>
                                         <p class="mt-4"><?= $bio ?></p>
                                     </div>
                                 </div>
