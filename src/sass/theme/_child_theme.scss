@@ -146,6 +146,12 @@ textarea:focus::placeholder {
     }
 }
 
+.breadcrumbs {
+    .crumb {
+        font-weight: bold;
+    }
+}
+
 // homepage
 .home-main {
     background-color: $primary;

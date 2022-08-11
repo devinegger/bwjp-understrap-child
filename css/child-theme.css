@@ -15734,6 +15734,10 @@ textarea:focus::placeholder {
   color: #fff;
 }
 
+.breadcrumbs .crumb {
+  font-weight: bold;
+}
+
 .home-main {
   background-color: #6938E6;
 }

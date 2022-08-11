@@ -81,7 +81,7 @@ if(is_tax('section')) {
                                 <?php get_search_form(); ?>
                             <?php else: ?>
                                 <div class="breadcrumbs">
-                                    <span class="crumb"><a href="/">Home</a></span> / <?= $parent_crumb !== "" ? '<span class="parent-crumb">' . $parent_crumb . '</span> / ' : "" ?> <span class="crumb"><?= $page_crumb ?></span>
+                                    <a href="/">Home</a> / <?= $parent_crumb !== "" ? '<span class="parent-crumb">' . $parent_crumb . '</span> / ' : "" ?> <span class="crumb"><?= $page_crumb ?></span>
                                 </div>
                             <?php endif; ?>
                         </div>
