@@ -17,7 +17,7 @@ $sections = get_terms( array(
 
 <div class="col-md-3 p-5 text-white" style="background-color: #000a66;">
     <aside role="complimentary">
-        <ul class="sections-list">
+        <ul class="sections-list ms-2">
             <?php foreach($sections as $section) : ?>
 
                 <?php $name = $section->name; ?>

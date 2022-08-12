@@ -11,6 +11,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 @import url("https://use.typekit.net/eod1bmn.css");
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@200;400;700");
 :root {
   --bs-blue: #000F9F;
   --bs-indigo: #6610f2;
@@ -54,10 +55,10 @@
   --bs-black-rgb: 0, 0, 0;
   --bs-body-color-rgb: 33, 37, 41;
   --bs-body-bg-rgb: 255, 255, 255;
-  --bs-font-sans-serif: "termina", sans-serif;
+  --bs-font-sans-serif: "outfit", sans-serif;
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
-  --bs-body-font-family: termina, sans-serif;
+  --bs-body-font-family: outfit, sans-serif;
   --bs-body-font-size: 1rem;
   --bs-body-font-weight: 400;
   --bs-body-line-height: 1.5;
@@ -105,6 +106,7 @@ hr:not([size]) {
 h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
   margin-top: 0;
   margin-bottom: 0.5rem;
+  font-family: "termina", sans-serif;
   font-weight: 500;
   line-height: 1.2;
 }
@@ -4475,7 +4477,7 @@ textarea.form-control-lg {
   text-decoration: underline;
 }
 .btn-link:hover {
-  color: #542db8;
+  color: #000F9F;
 }
 .btn-link:disabled, .btn-link.disabled {
   color: #6c757d;
@@ -4554,7 +4556,7 @@ textarea.form-control-lg {
   list-style: none;
   background-color: #fff;
   background-clip: padding-box;
-  border: 1px solid rgba(0, 0, 0, 0.15);
+  border: 0 solid rgba(0, 0, 0, 0.15);
   border-radius: 0;
 }
 .dropdown-menu[data-bs-popper] {
@@ -5494,7 +5496,7 @@ textarea.form-control-lg {
   color: #000F9F;
 }
 .navbar-light .navbar-nav .nav-link {
-  color: #FF4D00;
+  color: #DB3700;
 }
 .navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link:focus {
   color: #6938E6;
@@ -5507,14 +5509,14 @@ textarea.form-control-lg {
   color: #000F9F;
 }
 .navbar-light .navbar-toggler {
-  color: #FF4D00;
+  color: #DB3700;
   border-color: rgba(0, 0, 0, 0.1);
 }
 .navbar-light .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23ffffff' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23000F9F' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 .navbar-light .navbar-text {
-  color: #FF4D00;
+  color: #DB3700;
 }
 .navbar-light .navbar-text a,
 .navbar-light .navbar-text a:hover,
@@ -6811,7 +6813,7 @@ textarea.form-control-lg {
   z-index: 1080;
   display: block;
   margin: 0;
-  font-family: "termina", sans-serif;
+  font-family: "outfit", sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -6913,7 +6915,7 @@ textarea.form-control-lg {
   z-index: 1070;
   display: block;
   max-width: 276px;
-  font-family: "termina", sans-serif;
+  font-family: "outfit", sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -15636,7 +15638,9 @@ picture.img-fluid img {
   text-transform: uppercase;
 }
 .btn:hover, .wpcf7 input[type=submit]:hover, #wpforms-submit-29:hover, #wpforms-submit-59:hover, .wp-block-search__button:hover, .woocommerce-notices-wrapper .woocommerce-message a.button:hover, .woocommerce-info a.button:hover {
-  color: #fff;
+  color: #000F9F;
+  font-size: 1.1em;
+  background-color: #FF4D00;
 }
 
 input:focus::-moz-placeholder, textarea:focus::-moz-placeholder {
@@ -15656,18 +15660,21 @@ textarea:focus::placeholder {
   background-color: #ffffff;
 }
 
+.navbar .navbar-nav .nav-link {
+  font-family: "termina", sans-serif;
+}
 .navbar .navbar-nav .no-link > a {
   cursor: default;
 }
 .navbar .navbar-nav .menu-item:hover .nav-link::before,
 .navbar .navbar-nav .menu-item.active .nav-link::before {
   content: "";
-  height: 0.2rem;
+  height: 0.15rem;
   width: 3rem;
   display: block;
   position: absolute;
   left: -2.2rem;
-  top: 1rem;
+  top: 0.9rem;
 }
 .navbar .navbar-nav .menu-item:hover .nav-link {
   color: #6938E6;
@@ -15694,7 +15701,7 @@ textarea:focus::placeholder {
   position: fixed;
   top: 28%;
   left: 2%;
-  color: #fff !important;
+  color: #000F9F !important;
   background-color: #FF4D00;
   z-index: 900;
 }
@@ -15734,10 +15741,6 @@ textarea:focus::placeholder {
   color: #fff;
 }
 
-.breadcrumbs .crumb {
-  font-weight: bold;
-}
-
 .home-main {
   background-color: #6938E6;
 }
@@ -15747,7 +15750,6 @@ textarea:focus::placeholder {
 }
 .home-main .first-line {
   font-weight: bold;
-  float: right;
 }
 .home-main .img-left img {
   height: 75%;
@@ -15759,7 +15761,7 @@ textarea:focus::placeholder {
   text-transform: uppercase;
 }
 #page-title .breadcrumbs .crumb {
-  padding: 0 0.5rem;
+  font-weight: bold;
 }
 #page-title .breadcrumbs a {
   color: #ffffff;
@@ -15968,6 +15970,15 @@ input, textarea, div.wpforms-container .wpforms-form .choices__inner {
 }
 .classy-donation-form label {
   font-weight: bold !important;
+}
+
+.nano > .nano-pane .nano-slider {
+  background: #fff !important;
+}
+
+.mapsvg-popover-close::after,
+.mapsvg-popover-close::before {
+  background: #fff !important;
 }
 
 .featured-article a {

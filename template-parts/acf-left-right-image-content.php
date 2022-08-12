@@ -59,10 +59,10 @@ $image_side === 'left' ? $image_class = '' : $image_class = 'order-md-2';
                 <?= $image ?>
             </div>
             <div class="col-md-6 p-3 <?= $content_class ?>">
-                <h3 class="fw-bold text-uppercase mb-5" style="color: <?= $text_color ?> ;"><?= $headline ?></h3>
+                <h3 class="fw-bold text-uppercase mb-5" style="color: <?= $text_color['value'] ?> ;"><?= $headline ?></h3>
                 <p style="color: <?= $text_color ?> ;"><?= $content ?></p>
                 <?php if($button_arr) : ?>
-                    <a href="<?= $button_url ?>" class="btn btn-dark" target="<?= $button_target ?>"><?= $button_title ?></a>
+                    <a href="<?= $button_url ?>" class="btn btn-dark mt-5" target="<?= $button_target ?>"><?= $button_title ?></a>
                 <?php endif; ?>
             </div>
         </div>
