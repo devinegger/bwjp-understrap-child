@@ -25,9 +25,38 @@ if($page_bg_color['label'] === "White") {
 	$content_class .= "white";
 }
 
+$marquee_images = get_field('marquee_images');
+
 ?>
 <main class="site-main" id="main" style="background-color: <?= $page_bg_color['value'] ?>;">
-	<div class="container-fluid <?= $content_class ?>" id="content">
+	<div class="container-fluid p-0 <?= $content_class ?>" id="content">
+
+		<?php if($marquee_images) :	?>
+
+		<div class="row" id="image-marquee">
+			<div class="col-md-7 p-0 marquee-left">
+				<?php 
+					$marquee_image_arr_1 = $marquee_images['marquee_image_1']; 
+					$marquee_image_ID_1 = $marquee_image_arr_1['ID']; 
+					$marquee_image_URL_1 = $marquee_image_arr_1['url']; 
+					$marquee_image_alt_1 = $marquee_image_arr_1['alt']; 
+					$marquee_image_1 = wp_get_attachment_image( $marquee_image_ID_1, 'full', FALSE, array('src'=>$marquee_image_URL_1, 'alt'=>$marquee_image_alt_1) ); 
+				 ?>
+				<?= $marquee_image_1 ?>
+			</div>
+			<div class="col-md-5 p-0 marquee-right">
+				<?php 
+					$marquee_image_arr_2 = $marquee_images['marquee_image_2']; 
+					$marquee_image_ID_2 = $marquee_image_arr_2['ID']; 
+					$marquee_image_URL_2 = $marquee_image_arr_2['url']; 
+					$marquee_image_alt_2 = $marquee_image_arr_2['alt']; 
+					$marquee_image_2 = wp_get_attachment_image( $marquee_image_ID_2, 'full', FALSE, array('src'=>$marquee_image_URL_2, 'alt'=>$marquee_image_alt_2) ); 
+				 ?>
+				<?= $marquee_image_2 ?>
+			</div>
+		</div>	
+
+		<?php endif; ?>
 		<div class="row py-5 justify-content-center">
 			<div class="col-12">
 				<div class="container">

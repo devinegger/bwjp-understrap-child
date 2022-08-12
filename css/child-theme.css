@@ -15768,6 +15768,17 @@ textarea:focus::placeholder {
   text-decoration: none;
 }
 
+#image-marquee {
+  overflow-x: hidden;
+}
+#image-marquee .marquee-left img {
+  margin-right: -3rem;
+}
+#image-marquee .marquee-right img {
+  margin-top: 3rem;
+  margin-left: 3rem;
+}
+
 .featured-resources {
   background-color: #C6D2DB;
 }

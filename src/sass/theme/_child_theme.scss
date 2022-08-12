@@ -183,6 +183,17 @@ textarea:focus::placeholder {
     }
 }
 
+#image-marquee {
+    overflow-x: hidden;
+    .marquee-left img {
+        margin-right: -3rem;
+    }
+    .marquee-right img{
+        margin-top: 3rem; 
+        margin-left: 3rem;
+    }
+}
+
 // featured resources 
 .featured-resources {
     background-color: $gray;
