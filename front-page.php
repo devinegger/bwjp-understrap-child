@@ -24,7 +24,7 @@ get_header();
 			<section class="home-main">
 				<div class="row justify-content-center px-5 pt-5">
 					<div class="col-10" style="z-index: 800;">
-						<h2 class="text-uppercase text-light text-left display-3 headline"><span class="first-line slidein-right-effect d-inline-block">Changing Systems</span>
+						<h2 class="text-uppercase text-light text-center display-3 headline"><span class="first-line slidein-right-effect d-inline-block">Changing Systems</span>
 						<br/><span class="slidein-left-effect d-inline-block">Transforming Lives</span></h2>
 					</div>
 				</div>
@@ -33,7 +33,7 @@ get_header();
 						<img class="img-left" src="/wp-content/uploads/2022/05/Home_2.png" alt="">
 					</div>
 					<div class="col-md-10">
-						<img class="img-right" src="/wp-content/uploads/2022/05/Home_1-1.jpg" alt="">
+						<img class="img-rightt" src="/wp-content/uploads/2022/05/Home_1-1.jpg" alt="">
 					</div>
 				</div>
 				<div class="row p-5 text-white text-center justify-content-center">

@@ -93,7 +93,7 @@ $image = wp_get_attachment_image( $image_ID, 'full', FALSE, array('src'=>$image_
 	<?php elseif($_COOKIE['bwjpVS'] === '1' || $_POST['code']==='verified'): // user is verified, show content ?>
 
 		<div class="container-fluid" id="content">
-			<div class="row pt-5 justify-content-center text-white">
+			<div class="row justify-content-center text-white">
 				<div class="col-md-7 p-0">
 					<?= $image; ?>
 				</div>
@@ -108,9 +108,9 @@ $image = wp_get_attachment_image( $image_ID, 'full', FALSE, array('src'=>$image_
 					<div class="row">
 						<?php if(have_posts()) : ?>
 							<?php while(have_posts()): the_post(); ?>
-								<div class="col-md-6 p-3">
-									<div class="section-resources text-info p-3" style="background-color: #C6D2DB;">
-										<h3 class="text-uppercase"><a class="text-info text-decoration-none" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+								<div class="col-md-6 p-3 h-100">
+									<div class="section-resources text-info p-3 h-100" style="background-color: #C6D2DB;">
+										<h3 class="text-uppercase fs-6"><a class="text-info text-decoration-none" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 										<?php understrap_posted_on(); ?>
 										<p><?= wp_trim_words(get_the_content(), 20); ?></p>
 										<?php $resource_tags = get_the_tags(); ?>

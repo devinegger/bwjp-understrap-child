@@ -134,7 +134,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 			<span class="visually-hidden">Open Menu</span>
 		</button>
 		<a href="#" class="btn btn-secondary quick-exit text-white d-block d-md-none">
-			<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+			<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#000F9F" class="bi bi-x-lg" viewBox="0 0 16 16">
 				<path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
 			</svg>
 			<span class="visually-hidden">Quickly Exit Site</span>

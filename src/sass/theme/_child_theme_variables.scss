@@ -5,6 +5,8 @@ $teal: #19a5b4;
 $blue: #000F9F;
 $gray: #C6D2DB;
 
+$dark-orange: #DB3700;
+
 $light-blue: #000eff;
 $dark-blue: #000a66;
 
@@ -22,12 +24,17 @@ $h3-font-size:                $font-size-base * 2;
 $h4-font-size:                $font-size-base * 1.75;
 $h5-font-size:                $font-size-base * 1.5;
 $h6-font-size:                $font-size-base * 1.25;
-$font-family-sans-serif: 'termina', sans-serif; 
-$font-family-base: 'termina', sans-serif; 
+
+
+$font-family-sans-serif:  'outfit', sans-serif;
+$font-family-base: 'outfit', sans-serif;
+
+$headings-font-family: 'termina', sans-serif; 
 
 
 /* ** Buttons ** */
 $btn-link-color: $blue;
+$btn-link-hover-color: $blue;
 
 /* ** Forms ** */
 $input-bg: $primary;
@@ -39,11 +46,11 @@ $input-border-radius: .5rem;
 
 
 /* ** Navigation ** */
-$navbar-light-color: $orange;
+$navbar-light-color: $dark-orange;
 $navbar-light-hover-color: $purple;
 $navbar-light-active-color: $blue;
 
-$navbar-light-toggler-icon-bg:  url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='#ffffff' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>") !default;
+$navbar-light-toggler-icon-bg:  url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='#000F9F' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>") !default;
 $navbar-toggler-padding-y:          .5rem !default;
 $navbar-toggler-padding-x:          .5rem !default;
 $navbar-toggler-border-radius: 50%;
@@ -52,6 +59,7 @@ $dropdown-padding-y: 0;
 $dropdown-font-size: .8rem;
 $dropdown-color: $purple;
 $dropdown-border-radius: 0;
+$dropdown-border-width:  0;
 $dropdown-link-color: $purple;
 $dropdown-link-hover-color: #ffffff;
 $dropdown-link-hover-bg: $purple;
