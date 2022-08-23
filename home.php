@@ -51,7 +51,7 @@ $content = $featured_article->post_excerpt;
 			</div>
 			<div class="row">
 				<?php get_template_part( 'sidebar-templates/archive', 'sidebar' ); ?>
-				<div class="col-md-9 order-2"> 
+				<div class="col-md-9 order-2 pt-5"> 
 				<!-- displaying first to run though posts to get oldest year -->
 					<div class="row">
 						<?php if(have_posts()) : ?>
@@ -62,8 +62,8 @@ $content = $featured_article->post_excerpt;
 										$oldest_post_year=$posted_on_year;
 									}
 								?>
-								<div class="col-md-6 p-3">
-									<div class="article text-info p-3" style="background-color: #C6D2DB;">
+								<div class="col-md-6 mt-3">
+									<div class="article text-info p-3 h-100" style="background-color: #C6D2DB;">
 										<h3 class="text-uppercase"><a href="<?= the_permalink(); ?>"><?= the_title(); ?></a></h3>
 										<?php understrap_posted_on(); ?>
 										<p><?= wp_trim_words(get_the_content(), 20); ?></p>

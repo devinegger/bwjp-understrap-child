@@ -12,6 +12,8 @@ $dark-blue: #000a66;
 
 $dark-gray: #66696a;
 
+$transparent: rgba(255,255,255,0);
+
 $primary: $purple;  
 $secondary: $orange;
 $info: $blue;
@@ -37,7 +39,7 @@ $btn-link-color: $blue;
 $btn-link-hover-color: $blue;
 
 /* ** Forms ** */
-$input-bg: $primary;
+$input-bg: $transparent;
 $input-color: #ffffff;
 $input-placeholder-color: #dcdada;
 $input-border-color: #ffffff;
@@ -66,4 +68,14 @@ $dropdown-link-hover-bg: $purple;
 $dropdown-link-active-color: #ffffff;
 $dropdown-link-active-bg: $purple;
 
+$dropdown-item-padding-y:  .5rem;
+$dropdown-item-padding-x:  1rem;
+
 $enable-caret: false;
+
+
+// Modal
+$btn-close-color: $orange;
+$modal-content-color: #ffffff;
+$modal-header-border-width: 0;
+$modal-footer-border-width: 0;

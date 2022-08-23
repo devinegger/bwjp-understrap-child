@@ -11,16 +11,16 @@ defined( 'ABSPATH' ) || exit;
 $container = get_theme_mod( 'understrap_container_type' );
 ?>
 
-<nav id="main-nav" class="navbar navbar-expand-md navbar-light" aria-labelledby="main-nav-label">
+<nav id="main-nav" class="navbar navbar-expand-md navbar-light px-5" aria-labelledby="main-nav-label">
 
 	<h2 id="main-nav-label" class="screen-reader-text">
 		<?php esc_html_e( 'Main Navigation', 'understrap' ); ?>
 	</h2>
 
 
-	<div class="container">
+	<div class="container-fluid px-5">
 		<div class="row flex-grow-1 py-5">
-			<div class="col-md-2 desktop-menu">
+			<div class="col-md-2 desktop-menu p-0">
 
 				<div class="offcanvas offcanvas-end bg-white" tabindex="-1" id="navbarNavOffcanvasPrimary">
 
@@ -90,6 +90,8 @@ $container = get_theme_mod( 'understrap_container_type' );
 						)
 					);
 					?>
+
+					<?php echo apply_shortcodes('[gtranslate]'); ?>
 				</div><!-- .offcanvas -->
 			</div><!-- .col -->
 		</div><!-- .row -->
@@ -124,16 +126,17 @@ $container = get_theme_mod( 'understrap_container_type' );
 					'menu_class'      => 'navbar-nav d-flex flex-column',
 					'menu_id'         => 'mobile-menu',
 				'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
-				) );
+				) );								
 			?>
+			<?php echo apply_shortcodes('[gtranslate]'); ?>
 		</div>
 	</div>
 	<div class="side-menu">
-		<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarNavOffcanvasMobile" aria-controls="navbarNavOffcanvasMobile" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'understrap' ); ?>">
+		<button class="navbar-toggler" type="button" tabindex="0" data-bs-toggle="offcanvas" data-bs-target="#navbarNavOffcanvasMobile" aria-controls="navbarNavOffcanvasMobile" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'understrap' ); ?>">
 			<span class="navbar-toggler-icon"></span>
 			<span class="visually-hidden">Open Menu</span>
 		</button>
-		<a href="#" class="btn btn-secondary quick-exit text-white d-block d-md-none">
+		<a href="#" class="btn btn-secondary quick-exit text-white d-block d-md-none" tabindex="0">
 			<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#000F9F" class="bi bi-x-lg" viewBox="0 0 16 16">
 				<path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
 			</svg>

@@ -53,18 +53,20 @@ if(is_tax('section')) {
     $parent_crumb = $parent_title;
 }
 
+// don't display parent crumb if it is the sam as page cruumb
+if ($parent_crumb === $page_crumb) { $parent_crumb = ''; }
 
 
  
 ?>
 
-<section id="page-title">
+<section id="page-title"  style="background-color: <?= $title_bg_color; ?> ;">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-12 p-0">
+            <div class="col-12 px-0 px-lg-5">
                 <header class="entry-header">
-                    <div class="jumbotron jumbotron-fluid" style="background-color: <?= $title_bg_color; ?> ;">
-                        <div class="container text-start text-light py-5">
+                    <div class="jumbotron jumbotron-fluid">
+                        <div class="container-fluid text-start text-light p-5">
                             <h1 class="entry-title text-uppercase display-4 fw-bold"><?= $page_title ?></h1>
 
                             <?php if(is_search()): ?>

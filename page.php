@@ -57,9 +57,9 @@ $marquee_images = get_field('marquee_images');
 		</div>	
 
 		<?php endif; ?>
-		<div class="row py-5 justify-content-center">
+		<div class="row p-5 justify-content-center">
 			<div class="col-12">
-				<div class="container">
+				<div class="container-fluid px-0 px-lg-5">
 				
 					<?php
 						while ( have_posts() ) {
@@ -76,7 +76,7 @@ $marquee_images = get_field('marquee_images');
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-12 p-0">
+			<div class="col-12">
 				<?php get_template_part('template-parts/acf','main'); ?>
 			</div>
 		</div><!-- .row -->

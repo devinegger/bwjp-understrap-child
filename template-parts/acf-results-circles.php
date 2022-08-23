@@ -10,8 +10,8 @@
 
 
 <section class="results-circles">
-    <div class="container">
-        <div class="row">
+    <div class="container-fluid p-5">
+        <div class="row px-5">
             <?php foreach($circle_data as $circle) : ?>
             <div class="col-md-6 col-lg-4 p-5 p-md-3 p-lg-4">
                 <div class="circle-container">

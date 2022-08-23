@@ -13,24 +13,39 @@ picture.img-fluid img {
     background-color: $orange;
     border: none;
     border-radius: .5rem;
-    padding: .5rem 2rem;
     font-weight: 600;
     text-transform: uppercase;
 
+    &:not(.quick-exit) {
+        line-height: 2.5rem;
+        padding: .5rem 2rem !important;
+    }
+
     &:hover {
-        color: $blue;
-        font-size: 1.1em;
+        color: $white;
         background-color: $orange;
     }
 }
 
-.wp-block-search__button {
+
+.wp-block-search__button,
+.wp-block-button__link,
+.fasc-button {
     @extend .btn;
 }
 
 input:focus::placeholder,
 textarea:focus::placeholder {
     color: transparent !important;
+}
+
+#navigationModal {
+    .modal-content {
+        @include media-breakpoint-up(md) {
+            padding: 3rem;
+        }
+        background-color: rgba(39, 39, 39,.6);
+    }
 }
 
 
@@ -52,10 +67,10 @@ textarea:focus::placeholder {
             .nav-link::before {
                 content: '';
                 height: .15rem;
-                width: 3rem;
+                width: 6rem;
                 display: block;
                 position: absolute;
-                left: -2.2rem;
+                left: -5.2rem;
                 top: .9rem;
             }
         }
@@ -97,7 +112,7 @@ textarea:focus::placeholder {
             position: fixed;
             top: 28%;
             left: 2%;
-            color: $blue !important;
+            color: $transparent;
             background-color: $orange;
             z-index: 900;
 
@@ -109,10 +124,17 @@ textarea:focus::placeholder {
         .quick-exit {
             position: fixed;
             z-index: 900;
-            top: 35%;
+            top: 36%;
             left: 2%;
             border-radius: 50%;
             padding: .5rem;
+        }
+
+        .navbar-toggler,
+        .quick-exit {
+            :focus {
+                border: 2px solid #fff;
+            }
         }
     }
 }
@@ -155,6 +177,10 @@ textarea:focus::placeholder {
     .headline {
         letter-spacing: 5px;
         margin-bottom: -3rem;
+
+        @include media-breakpoint-down(md) {
+            font-size: 28px !important;
+        }
     }
 
     .first-line {
@@ -190,13 +216,20 @@ textarea:focus::placeholder {
     }
     .marquee-right img{
         margin-top: 3rem; 
-        margin-left: 3rem;
+        margin-left: -3rem;
+        max-width: 110% !important;
     }
 }
 
 // featured resources 
 .featured-resources {
     background-color: $gray;
+
+    @include media-breakpoint-down(md) {
+        h3 {
+            font-size: 24px;
+        }
+    }
 
     .item-column {
         min-height: 500px;
@@ -252,6 +285,17 @@ textarea:focus::placeholder {
         color: $light-blue;
         font-size: 4rem;
         font-weight: bold;
+    }
+
+    @include media-breakpoint-down(md) {
+        .dissapear, h3 {
+            font-size: 1.3rem !important;
+            overflow-wrap: break-word;
+        }
+    }
+
+    .mapsvg-data-form-view {
+        display: none !important;
     }
 }
 
@@ -403,7 +447,10 @@ textarea:focus::placeholder {
 
 .content-tools {
     padding: 3rem;
-    margin-left: -4rem;
+
+    @include media-breakpoint-up(md) {
+        margin-left: -4rem;
+    }
 
     a {
         color: $white;
@@ -469,6 +516,20 @@ textarea:focus::placeholder {
     background: #fff !important;
 }
 
+// G-Translate
+
+.desktop-menu {
+    .switcher  {
+        margin-left: 13px;
+        margin-top: 6px;
+        z-index: 999 !important;
+
+        .option {
+            position: absolute !important;
+        }
+    }
+}
+
 
 
 // ARTCILES
@@ -493,6 +554,14 @@ textarea:focus::placeholder {
 
 
 // SEARCH
+
+.search-page {
+    .search-form {
+        input {
+            background: $primary;
+        }
+    }
+}
 .search-nav {
     .nav-item {
         background: $info;

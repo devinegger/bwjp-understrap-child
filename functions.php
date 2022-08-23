@@ -174,15 +174,7 @@ function understrap_posted_on() {
 			apply_filters( 'understrap_posted_on_time', $time_string )
 		)
 	);
-	$byline      = apply_filters(
-		'understrap_posted_by',
-		sprintf(
-			'<span class="byline"> %1$s<span class="author vcard">%2$s</span></span>',
-			$posted_on ? esc_html_x( '| ', 'post author', 'understrap' ) : esc_html_x( 'Posted by', 'post author', 'understrap' ),
-			esc_html( get_the_author() )
-		)
-	);
-	echo $posted_on . $byline; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+	echo $posted_on; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 }
 
 /**

@@ -25,8 +25,8 @@ $content = get_sub_field('content');
 ?>
 
 <section class="left-right-image-content" style="background-color: <?= $bg_color; ?> ;">
-    <div class="container">
-        <div class="row d-flex align-items-center py-5">
+    <div class="container-fluid p-5">
+        <div class="row d-flex align-items-center px-0 px-lg-5 py-5">
             <div class="col-md-6 p-3 <?= $content_class ?>">
                 <?php if($headline) : ?>
                     <h3 class="fw-bold text-uppercase mb-5" style="color: <?= $text_color ?> ;"><?= $headline ?></h3>

@@ -19,7 +19,7 @@ $all_tags = get_tags();
 
 <main class="site-main" id="main">
 	<div class="container-fluid" id="content" tabindex="-1">
-		<div class="row">
+		<div class="row px-0 px-lg-5">
 			<?php get_template_part( 'sidebar-templates/archive', 'sidebar' ); ?>
 			<div class="col-md-9 order-2"> 
 				<div class="row">

@@ -1,11 +1,39 @@
 // Add your custom JS here.
 
+// functions for setting, getting, and removing cookies
+function setCookie(key, value, expiry) {
+    var expires = new Date();
+    expires.setTime(expires.getTime() + (expiry * 24 * 60 * 60 * 1000));
+    document.cookie = key + '=' + value + ';expires=' + expires.toUTCString();
+}
+
+function getCookie(key) {
+    var keyValue = document.cookie.match('(^|;) ?' + key + '=([^;]*)(;|$)');
+    return keyValue ? keyValue[2] : null;
+}
+
+function eraseCookie(key) {
+    var keyValue = getCookie(key);
+    setCookie(key, keyValue, '-1');
+}
+
 (function($) {
 
     $(document).ready(function($){
 
-        $('.search-nav .nav-link').click( function() {
-            //alert('hello');
+        // set cookie when navigation modal is closed
+        $('.modal-close').click( function() {
+            setCookie("closed", 1, 30);
+        });
+
+        // if cookie is not set, show navigation modal on page load
+        if(!getCookie('closed')) {
+            $('#navigationModal').modal('show');
+        }
+
+
+        $('.search-nav .nav-link').click( function(e) {
+            e.preventDefault();
             if(!$(this).hasClass('active')) { // if the clicked nav-link is not active
 
                 let target = $(this).data('target'); // target is results row to show when clicked

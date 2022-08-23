@@ -25,8 +25,8 @@ $headline = get_sub_field('headline');
 
 
 <section class="wysiwyg" style="background-color: <?= $bg_color; ?> ;">
-    <div class="container p-5">
-        <div class="row d-flex align-items-center justify-content-center">
+    <div class="container-fluid p-5">
+        <div class="row d-flex align-items-center justify-content-center px-0 px-lg-5">
             <div class="col-12 <?= $content_class ?>">
                 <?php if($headline) : ?>
                     <h3 class="fw-bold text-uppercase"><?= $headline; ?></h3>

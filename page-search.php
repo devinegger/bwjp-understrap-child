@@ -26,7 +26,7 @@ if($page_bg_color['label'] === "White") {
 }
 
 ?>
-<main class="site-main" id="main" style="background-color: <?= $page_bg_color['value'] ?>;">
+<main class="site-main search-page" id="main" style="background-color: <?= $page_bg_color['value'] ?>;">
 	<div class="container-fluid <?= $content_class ?>" id="content">
 		<div class="row py-5 justify-content-center">
 			<div class="col-12">

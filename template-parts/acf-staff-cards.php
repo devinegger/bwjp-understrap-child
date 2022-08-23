@@ -11,12 +11,12 @@ $staff_members = get_sub_field('staff_members');
 
 
 <section class="staff-cards">
-    <div class="container">
-        <div class="row py-5">
+    <div class="container-fluid p-5">
+        <div class="row px-0 px-lg-5">
             <h2 class="text-info text-uppercase"><?= $headline; ?></h2>
             <?php foreach($staff_members as $member) : ?>
                 <?php $name = $member['name']; ?>
-                <?php $name_id = strtolower(str_replace(array(" ", ","), array("-", ""), $name)); ?>
+                <?php $name_id = strtolower(str_replace(array(" ", ",","."), array("-", "",""), $name)); ?>
                 <?php $job_title = $member['job_title']; ?>
                 <?php $pronouns = $member['pronouns']; ?>
                 <?php $bio = $member['bio']; ?>
@@ -25,7 +25,7 @@ $staff_members = get_sub_field('staff_members');
                     $image_URL = $image_arr['url']; 
                     $image_alt = $image_arr['alt']; 
                     $image = wp_get_attachment_image( $image_ID, 'full', FALSE, array('src'=>$image_URL, 'class'=> 'member-image img-fluid', 'alt'=>$image_alt) ); ?>
-            <div class="col-md-4 pb-2">
+            <div class="col-md-4 pb-4">
                 <div class="card h-100">
                     <div class="card-body bg-info text-white">
                         <?= $image ?>

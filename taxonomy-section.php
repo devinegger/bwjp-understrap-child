@@ -15,6 +15,11 @@ defined( 'ABSPATH' ) || exit;
 
 get_header();
 
+if(!empty($_GET['type'])) {
+	$type = $_GET['type'];
+}
+
+echo $type;
 
 // user has not been sent verification yet
 $verification_sent = false;

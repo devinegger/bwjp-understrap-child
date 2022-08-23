@@ -26,6 +26,35 @@ $navbar_type       = get_theme_mod( 'understrap_navbar_type', 'collapse' );
 <?php do_action( 'wp_body_open' ); ?>
 <div class="site" id="page">
 
+<!-- Full screen modal for safety and menu instructions -->
+<div class="modal fade" id="navigationModal" tabindex="-1" aria-labelledby="navigationModelLabal" aria-hidden="true">
+	<div class="modal-dialog modal-fullscreen">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title text-white" id="navigationModelLabal">Navigation Instructions</h4>
+				<button type="button" class="btn-close modal-close text-white" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<p>Use the Quick Exit link to close out this website and open a new tab in the weather channel.</p>
+				<p>Please be advised that BWJP.org will still show up in your browser's history. Consider opening this website in an incognito/private window and/or clearing your browser's history data when you are done.</p>
+				<div class="d-flex flex-row align-items-center">
+					<img src="/wp-content/uploads/2022/08/menu-icon.png" alt="menu icon for navigation illustration">
+					<p class="fs-5 pt-2 ps-2">Quick Menu for Navigation</p>
+				</div>
+				<div class="d-flex flex-row align-items-center">
+					<img src="/wp-content/uploads/2022/08/quick-exit-icon.png" alt="menu icon for navigation illustration">
+					<p class="fs-5 pt-2 ps-2">Quick Exit Closes This Website </p>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary modal-close" data-bs-dismiss="modal" aria-label="close modal">Got It!</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
 	<!-- ******************* The Navbar Area ******************* -->
 	<header id="wrapper-navbar">
 

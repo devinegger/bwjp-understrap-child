@@ -53,8 +53,8 @@ $image_side === 'left' ? $image_class = '' : $image_class = 'order-md-2';
 
 
 <section class="left-right-image-content" style="background-color: <?= $bg_color; ?> ;">
-    <div class="container">
-        <div class="row d-flex align-items-center py-5">
+    <div class="container-fluid p-5">
+        <div class="row d-flex align-items-center px-0 px-lg-5 py-5">
             <div class="col-md-6 p-3 <?= $image_class ?>">
                 <?= $image ?>
             </div>
