@@ -117,18 +117,18 @@ $image = wp_get_attachment_image( $image_ID, 'full', FALSE, array('src'=>$image_
 										<h3 class="text-uppercase fs-6"><a class="text-info text-decoration-none" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 										<?php understrap_posted_on(); ?>
 										<p><?= wp_trim_words(get_the_content(), 20); ?></p>
-										<?php $resource_tags = get_the_tags(); ?>
-										<span class="text-uppercase">TAGS: 
-											<?php foreach($resource_tags as $tag): ?>
-												<?= '#' . $tag->name . ' ' ?>
-											<?php endforeach; ?>
+										<?php $resource_terms = get_the_terms(get_the_ID(), 'class'); ?>
+										<span class="text-uppercase">CLASS: 
+											<?php foreach($resource_terms as $term): ?>
+												<a href="/?class=<?= $term->slug ?>"> <?= '#' . $term->name . ' ' ?></a><?= ", "?>
+											<?php endforeach;  ?>
 										</span>
 									</div>
 								</div>
 							<?php endwhile; ?>
 							<?php understrap_pagination(); ?>
 						<? else: ?>
-							<p>nothing to show...</p>
+							<p class="p-5 text-info">No resources found.</p>
 						<?php endif; ?>
 					</div>
 				</div>

@@ -28,16 +28,16 @@ if(is_tax('section')) {
 
 <div class="col-md-3 p-5 text-white" style="background-color: #000a66;">
     <aside role="complimentary">
-    <?php echo $current_slug; ?>
         
         <ul class="sections-list ms-2">
             <?php get_search_form( ); ?>
+            <h4 class="fs-6 pt-3">Filter Resources by Class</h4>
             <?php foreach($sections as $section) : ?>
 
                 <?php $name = $section->name; ?>
                 <?php $slug = $section->slug; ?>
 
-                <li><a class="text-white text-uppercase text-decoration-none" href="<?=$current_slug?>/?class=<?= $slug ?>"><?= $name ?> ></a></li>
+                <li><a class="text-white text-uppercase" href="<?=$current_slug?>/?class=<?= $slug ?>"><?= $name ?> ></a></li>
 
             <?php endforeach; ?>
         </ul>
