@@ -150,9 +150,42 @@ if( function_exists('acf_add_options_page') ) {
 function hdc_site_resources_posts_per_page( $query ) {
 	if( $query->is_main_query() && is_taxonomy('section') && ! is_admin() ) {
 		$query->set( 'posts_per_page', '6' );
+
+
+		if ( isset( $_GET['class'] ) ) {
+			$class_name = $_GET['class'];
+		
+			// Fetch only posts with class submitted in url
+			
+			$tax_class_query = array(
+
+				/*
+				'relation' => 'AND',
+				 array(
+				   'taxonomy' => 'class',
+				   'field' => 'slug',
+				   'term' => $class_name
+				 ),
+				 array(
+				   'taxonomy' => 'section',
+				   'field' => 'slug',
+				   'term' => 'bail-reform'
+				 )
+				 */
+				
+				array(
+					'taxonomy' => 'class',
+					'field' => 'slug',
+					'terms' => $class_name,
+				)
+			);
+			
+			$query->set( 'tax_query', $tax_class_query );
+		}
+
 	}
 }
-add_action( 'pre_get_posts', 'hdc_site_resources_posts_per_page' );
+add_action( 'pre_get_posts', 'hdc_site_resources_posts_per_page', 20 );
 
 // change default behavior of understrap_posted_on
 
@@ -204,6 +237,24 @@ function understrap_posted_on() {
 
 	return $post_years;
 
+ }
+
+/**
+ * Check if query has the provided taxonomy
+ *
+ * @param string $tax taxomonomy to check
+ * @return bool true if it has it, false if it don't
+ */
+ function has_tax($tax) {
+	global $post;
+
+	$terms = get_the_terms($post->ID, $tax); 
+
+	if($terms) {
+		return true;
+	} else {
+		return false;
+	}
  }
 
 

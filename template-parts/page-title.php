@@ -16,7 +16,7 @@ $page_crumb = '';
 $parent_crumb = '';
 
 
-if(is_tax('section')) {
+if(is_tax('section') || is_tax('class')) {
     $title_bg_color = '#000F9F'; // Blue
     $page_title = "Resources";
     $page_crumb = get_the_archive_title();

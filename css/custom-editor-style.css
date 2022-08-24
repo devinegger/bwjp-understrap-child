@@ -458,7 +458,7 @@ progress {
   --bs-gray-900: #212529;
   --bs-primary: #6938E6;
   --bs-secondary: #FF4D00;
-  --bs-success: #198754;
+  --bs-success: #19a5b4;
   --bs-info: #000F9F;
   --bs-warning: #ffc107;
   --bs-danger: #dc3545;
@@ -466,7 +466,7 @@ progress {
   --bs-dark: #212529;
   --bs-primary-rgb: 105, 56, 230;
   --bs-secondary-rgb: 255, 77, 0;
-  --bs-success-rgb: 25, 135, 84;
+  --bs-success-rgb: 25, 165, 180;
   --bs-info-rgb: 0, 15, 159;
   --bs-warning-rgb: 255, 193, 7;
   --bs-danger-rgb: 220, 53, 69;
@@ -577,15 +577,15 @@ progress {
 }
 
 .table-success {
-  --bs-table-bg: #d1e7dd;
-  --bs-table-striped-bg: #c7dbd2;
+  --bs-table-bg: #d1edf0;
+  --bs-table-striped-bg: #c7e1e4;
   --bs-table-striped-color: #000;
-  --bs-table-active-bg: #bcd0c7;
+  --bs-table-active-bg: #bcd5d8;
   --bs-table-active-color: #000;
-  --bs-table-hover-bg: #c1d6cc;
+  --bs-table-hover-bg: #c1dbde;
   --bs-table-hover-color: #000;
   color: #000;
-  border-color: #bcd0c7;
+  border-color: #bcd5d8;
 }
 
 .table-info {
@@ -974,12 +974,12 @@ progress {
 
 .has-success-color,
 .has-success-color:visited {
-  color: #198754;
+  color: #19a5b4;
 }
 
 .has-success-background-color {
-  background-color: #198754;
-  border-color: #198754;
+  background-color: #19a5b4;
+  border-color: #19a5b4;
 }
 
 .has-info-color,

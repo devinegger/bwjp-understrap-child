@@ -15,11 +15,9 @@ defined( 'ABSPATH' ) || exit;
 
 get_header();
 
-if(!empty($_GET['type'])) {
-	$type = $_GET['type'];
-}
 
-echo $type;
+// if making any edits to the function of verification below, or resourse template you must make those same edits to archive.php
+// it should be made known here that this level of unfinishedness is from direction of Anja Harris @ Whittier - DGE
 
 // user has not been sent verification yet
 $verification_sent = false;
@@ -62,16 +60,16 @@ $image = wp_get_attachment_image( $image_ID, 'full', FALSE, array('src'=>$image_
 	// cookie is not set at page refresh, so also checking to $_POST 'email' variables ?>
 
 	
-		<div class="container ">
-			<div class="row py-5 justify-content-center text-white">
-				<div class="col">
-					<p>The resources on this site require email verification in order to view them.</p>  
+		<div class="container-fluid bg-success text-info">
+			<div class="row py-5 text-white">
+				<div class="col text-center text-info fs-5">
+					<p class="fw-bold fs-4">The resources on this site require email verification in order to view them.</p>  
 					<p>Submit your email below and we will send you a verification code.</p>
 					<p>Once you've received the email copy and paste it back here to get access.</p>
 					<form method="post" action="#">
-						<label for="email-for-verification">Your Email</label>
-						<input type="text" id="email-for-verification" name="email" size="30">
-						<input class="btn" type="submit" value="submit" role="button">
+						<label for="email-for-verification" class="screen-reader-text">Your Email</label>
+						<input type="text" id="email-for-verification" name="email" size="60" placeholder="EMAIL ADDRESS">
+						<input class="btn d-block text-center m-auto mt-3" type="submit" value="submit" role="button">
 					</form>
 				</div>
 			</div>
@@ -81,15 +79,16 @@ $image = wp_get_attachment_image( $image_ID, 'full', FALSE, array('src'=>$image_
 	// if cookie is set, but not set to 0, user has not been verified yet 
 	// cookie is not set at page refresh, so also checking $_POST 'code' and $_POST 'email' variables ?>
 
-		<div class="container">
+		<div class="container-fluid bg-success text-info">
 			<div class="row py-5 justify-content-center text-white">
-				<div class="col">
-					<p>The resources on this site require email verification in order to view them.</p>  
+				<div class="col text-center text-info fs-5">
+					<p class="fw-bold fs-4">We've sent a verification code to the email address you submitted.</p>
+					<p>Be sure to check the spam folder.  If you're having trouble accessing your code, please contact us for help.</p>
 					<p>Submit email verification code below: </p>
 					<form method="post">
-						<label for="verification-code">Verification Code</label>
-						<input type="text" id="verification-code" name="code" size="30">
-						<input class="btn" type="submit" value="submit" role="button">
+						<label for="verification-code" class="screen-reader-text">Verification Code</label>
+						<input type="text" id="verification-code" name="code" size="60" placeholder="VERIFICATION CODE">
+						<input class="btn d-block text-center m-auto mt-3" type="submit" value="submit" role="button">
 					</form>
 				</div>
 			</div>
@@ -128,6 +127,8 @@ $image = wp_get_attachment_image( $image_ID, 'full', FALSE, array('src'=>$image_
 								</div>
 							<?php endwhile; ?>
 							<?php understrap_pagination(); ?>
+						<? else: ?>
+							<p>nothing to show...</p>
 						<?php endif; ?>
 					</div>
 				</div>
