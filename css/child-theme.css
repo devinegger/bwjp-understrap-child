@@ -15801,14 +15801,8 @@ textarea:focus::placeholder {
   background-color: #ffffff;
 }
 
-.navbar .navbar-nav .nav-link {
-  font-family: "termina", sans-serif;
-}
-.navbar .navbar-nav .no-link > a {
-  cursor: default;
-}
-.navbar .navbar-nav .menu-item:hover .nav-link::before,
-.navbar .navbar-nav .menu-item.active .nav-link::before {
+.navbar #main-menu .menu-item:hover .nav-link::before,
+.navbar #main-menu .menu-item.active .nav-link::before {
   content: "";
   height: 0.15rem;
   width: 6rem;
@@ -15816,6 +15810,15 @@ textarea:focus::placeholder {
   position: absolute;
   left: -5.2rem;
   top: 0.9rem;
+}
+.navbar #secondary-menu .nav-link {
+  color: #6938E6;
+}
+.navbar .navbar-nav .nav-link {
+  font-family: "termina", sans-serif;
+}
+.navbar .navbar-nav .no-link > a {
+  cursor: default;
 }
 .navbar .navbar-nav .menu-item:hover .nav-link {
   color: #6938E6;

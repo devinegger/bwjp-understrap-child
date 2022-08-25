@@ -54,14 +54,8 @@ textarea:focus::placeholder {
 }
 
 .navbar {
-    .navbar-nav {
-
-        .nav-link {
-            font-family: 'termina', sans-serif;
-        }
-        .no-link>a {
-            cursor: default;
-        }
+    
+    #main-menu {
         .menu-item:hover,
         .menu-item.active {
             .nav-link::before {
@@ -74,6 +68,21 @@ textarea:focus::placeholder {
                 top: .9rem;
             }
         }
+    }
+    #secondary-menu {
+        .nav-link {
+            color: $purple;
+        }
+    }
+    .navbar-nav {
+
+        .nav-link {
+            font-family: 'termina', sans-serif;
+        }
+        .no-link>a {
+            cursor: default;
+        }
+        
 
         .menu-item:hover {
             .nav-link {
