@@ -67,7 +67,7 @@ if ($parent_crumb === $page_crumb) { $parent_crumb = ''; }
                 <header class="entry-header">
                     <div class="jumbotron jumbotron-fluid">
                         <div class="container-fluid text-start text-light p-5">
-                            <h1 class="entry-title text-uppercase display-4 fw-bold"><?= $page_title ?></h1>
+                            <h1 class="entry-title text-uppercase display-6 fw-bold"><?= $page_title ?></h1>
 
                             <?php if(is_search()): ?>
                                 <?php if(have_posts()) :?>

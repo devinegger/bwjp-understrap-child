@@ -10,7 +10,7 @@ $partnerships = get_sub_field('partnerships');
 
 <section class="partnership-cards bg-white">
     <div class="container-fluid p-5">
-        <div class="row px-5">
+        <div class="row mx-0 mx-lg-5">
             <?php foreach($partnerships as $partnership) : ?>
                 <?php $name = $partnership['name']; ?>
                 <?php $image_arr = $partnership['image']; 

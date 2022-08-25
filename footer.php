@@ -36,11 +36,11 @@ $contact_bool = get_field('contact_form');
 			<div class="text-start mb-2"><span class="h4">LET'S STAY IN TOUCH</span></div>
 			<div class="text-start">
 				<div class="form-wrapper">
-					<form class="form-inline d-flex" action="https://bwjp.us11.list-manage.com/subscribe/post" method="POST">
+					<form class="form-inline d-lg-flex" action="https://bwjp.us11.list-manage.com/subscribe/post" method="POST">
 						<input type="hidden" name="u" value="554dc701fd0b3a38d610ccc2c">
 						<input type="hidden" name="id" value="347d47d8e9">
 						<label class="sr-only" for="emailInput">Email</label>
-						<input type="text" class="form-control me-3 text-uppercase" name="MERGE0" id="emailInput" placeholder="Email Address" size="50">
+						<input type="text" class="form-control me-3 mb-2 mb-lg-0 text-uppercase" name="MERGE0" id="emailInput" placeholder="Email Address" size="50">
 
 						<button type="submit" class="btn">SUBSCRIBE</button>
 					</form>

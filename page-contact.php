@@ -43,7 +43,7 @@ if($page_bg_color['label'] === "White") {
 	<div class="container-fluid <?= $content_class ?>" id="content">
 		<div class="row">
 			<div class="col-3 contact-sidebar p-0 d-flex flex-column" style="background-color: #19a5b4;">
-				<div class="sidebar-content p-5 h-100">
+				<div class="sidebar-content p-5 ms-5 h-100">
 					<?= $sidebar_content ?>
 				</div>
 				<?= $map_image ?>
@@ -65,9 +65,9 @@ if($page_bg_color['label'] === "White") {
 				</div>
 			</div>
 		</div>
-		<div class="row">
-			<div class="col-12 p-0">
-				<section class="contact-form text-info p-5" style="background-color: #19a5b4;">
+		<div class="row" style="background-color: #19a5b4;">
+			<div class="col-12 px-5">
+				<section class="contact-form text-info p-5">
 					<h3 class="text-uppercase">Email us</h3>
 					<?= apply_shortcodes( '[wpforms id="59" title="false"]', false ) ?>
 				</section>

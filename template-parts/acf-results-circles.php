@@ -11,9 +11,9 @@
 
 <section class="results-circles">
     <div class="container-fluid p-5">
-        <div class="row px-5">
+        <div class="row mx-0 mx-lg-5">
             <?php foreach($circle_data as $circle) : ?>
-            <div class="col-md-6 col-lg-4 p-5 p-md-3 p-lg-4">
+            <div class="col-md-6 col-lg-4 p-2 p-lg-4">
                 <div class="circle-container">
                     <div class="circle-outer">
                         <div class="circle-inner" style="position: relative;">

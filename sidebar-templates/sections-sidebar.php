@@ -26,10 +26,10 @@ if(is_tax('section')) {
 
 ?>
 
-<div class="col-md-3 p-5 text-white" style="background-color: #000a66;">
+<div class="col-md-3 pt-5 pe-5 p-lg-5 text-white" style="background-color: #000a66;">
     <aside role="complimentary">
         
-        <ul class="sections-list ms-2">
+        <ul class="sections-list ms-lg-2">
             <?php get_search_form( ); ?>
             <h4 class="fs-6 pt-3">Filter Resources by Class</h4>
             <?php foreach($sections as $section) : ?>

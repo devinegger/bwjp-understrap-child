@@ -25,11 +25,13 @@ if($page_bg_color['label'] === "White") {
 	$content_class .= "white";
 }
 
-$marquee_images = get_field('marquee_images');
+if(get_field('marquee_images')) {
+	$marquee_images = get_field('marquee_images');
+}
 
 ?>
 <main class="site-main" id="main" style="background-color: <?= $page_bg_color['value'] ?>;">
-	<div class="container-fluid p-0 <?= $content_class ?>" id="content">
+	<div class="container-fluid p-0 <?= $content_class ?>" id="content" style="display: block; overflow-x: hidden;">
 
 		<?php if($marquee_images) :	?>
 
@@ -57,9 +59,9 @@ $marquee_images = get_field('marquee_images');
 		</div>	
 
 		<?php endif; ?>
-		<div class="row p-5 justify-content-center">
+		<div class="row p-5 justify-content-center mx-0">
 			<div class="col-12">
-				<div class="container-fluid px-0 px-lg-5">
+				<div class="container-fluid px-0 px-lg-5 mx-0">
 				
 					<?php
 						while ( have_posts() ) {
