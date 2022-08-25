@@ -37,27 +37,7 @@ $image = wp_get_attachment_image( $image_id, 'full', FALSE, array('src'=>$image_
 					<?= $image ?>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-md-3 widget-area bg-info ps-5 pt-5 text-white" id="single-sidebar">
-					<div class="mx-lg-5">
-						<h3 class="text-uppercase">Related Articles</h3>
-						<?php foreach($related_posts as $post): ?>
-							<?php setup_postdata( $post ) ?>
-							<div class="article text-info p-3 mb-4" style="background-color: #C6D2DB;">
-								<h4 class="text-uppercase fs-6"><a href="<?= the_permalink(); ?>"><?= get_the_title(); ?></a></h4>
-								<?php understrap_posted_on(); ?>
-								<p><?= wp_trim_words(get_the_content(), 20); ?></p>
-								<?php $article_tags = get_the_tags($post->ID); ?>
-								<span class="text-uppercase">TAGS: 
-									<?php foreach($article_tags as $tag): ?>
-										<?= '#' . $tag->name . ' ' ?>
-									<?php endforeach; ?>
-								</span>
-							</div>
-						<?php endforeach; ?>
-						<?php wp_reset_postdata(); ?>
-					</div>
-				</div><!-- #articles-sidebar -->
+			<div class="row d-flex">
 				<div class="col-md-9">
 					<div class="article text-info p-5">
 						<h2 class="text-uppercase"><?= get_the_title(); ?></h2>
@@ -70,6 +50,26 @@ $image = wp_get_attachment_image( $image_id, 'full', FALSE, array('src'=>$image_
 						</span>
 					</div>
 				</div> <!-- .col -->
+				<div class="col-md-3 widget-area bg-info p-5 pt-5 pe-lg-0 text-white order-md-first" id="single-sidebar">
+					<div class="mx-lg-3">
+						<h3 class="text-uppercase">Related Articles</h3>
+						<?php foreach($related_posts as $post): ?>
+							<?php setup_postdata( $post ) ?>
+							<div class="article text-info p-3 mb-4" style="background-color: #C6D2DB;">
+								<h4 class="text-uppercase fs-6"><a href="<?= the_permalink(); ?>"><?= get_the_title(); ?></a></h4>
+								<?php understrap_posted_on(); ?>
+								<p><?= wp_trim_words(get_the_content(), 20); ?></p>
+								<?php $related_article_tags = get_the_tags($post->ID); ?>
+								<span class="text-uppercase">TAGS: 
+									<?php foreach($related_article_tags as $related_tag): ?>
+										<?= '#' . $related_tag->name . ' ' ?>
+									<?php endforeach; ?>
+								</span>
+							</div>
+						<?php endforeach; ?>
+						<?php wp_reset_postdata(); ?>
+					</div>
+				</div><!-- #articles-sidebar -->
 			</div><!-- .row -->
 		</div><!-- #content -->
 	</main><!-- #main -->

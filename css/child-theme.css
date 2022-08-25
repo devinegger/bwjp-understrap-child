@@ -15930,6 +15930,7 @@ textarea:focus::placeholder {
 .home-main .headline {
   letter-spacing: 5px;
   margin-bottom: -3rem;
+  font-size: 3rem;
 }
 @media (max-width: 767.98px) {
   .home-main .headline {

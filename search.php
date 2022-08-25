@@ -66,7 +66,7 @@ $article_posts = array();
 						<div class="col-md-6 col-lg-4 p-3">
 							<div class="article text-info p-3" style="background-color: #C6D2DB;">
 								<h3 class="text-uppercase"><a href="<?= get_the_permalink($our_work_post->ID); ?>"><?= $our_work_post->post_title ?></a></h3>
-								<?= get_the_author_meta('display_name',$our_work_post->post_author) . " | " . get_the_date('F d Y', $our_work_post->ID ) ?>
+								<?= get_the_date('F d Y', $our_work_post->ID ) ?>
 								<p><?= $our_work_post->post_excerpt ?></p>
 								<?php $article_tags = get_the_tags($our_work_post->ID); ?>
 								<span class="text-uppercase">TAGS: 
@@ -89,7 +89,7 @@ $article_posts = array();
 						<div class="col-md-6 col-lg-4 p-3">
 							<div class="article text-info p-3" style="background-color: #C6D2DB;">
 								<h3 class="text-uppercase"><a href="<?= get_the_permalink($resource_post->ID); ?>"><?= $resource_post->post_title ?></a></h3>
-								<?= get_the_author_meta('display_name',$resource_post->post_author) . " | " . get_the_date('F d Y', $resource_post->ID ) ?>
+								<?= get_the_date('F d Y', $resource_post->ID ) ?>
 								<p><?= $resource_post->post_excerpt ?></p>
 								<?php $article_tags = get_the_tags($resource_post->ID); ?>
 								<span class="text-uppercase">TAGS: 
@@ -112,7 +112,7 @@ $article_posts = array();
 						<div class="col-md-6 col-lg-4 p-3">
 							<div class="article text-info p-3" style="background-color: #C6D2DB;">
 								<h3 class="text-uppercase"><a href="<?= get_the_permalink($article_post->ID); ?>"><?= $article_post->post_title ?></a></h3>
-								<?= get_the_author_meta('display_name',$article_post->post_author) . " | " . get_the_date('F d Y', $article_post->ID ) ?>
+								<?= get_the_date('F d Y', $article_post->ID ) ?>
 								<p><?= $article_post->post_excerpt ?></p>
 								<?php $article_tags = get_the_tags($article_post->ID); ?>
 								<span class="text-uppercase">TAGS: 

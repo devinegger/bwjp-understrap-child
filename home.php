@@ -39,7 +39,7 @@ if(get_field('featured', $posts_page_id) ) {
 						<?= $image ?>
 					</div>
 					<div class="col-md-5 text-white" style="background-color: #FF4D00;">
-						<h2><?= $title ?></h2>
+						<h2 class="fs-4"><?= $title ?></h2>
 						<p><?php understrap_posted_on(); ?></p>
 						<p><?= $content ?></p>
 						<?php 
